@@ -1,0 +1,264 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fights/icon/ryanMan.png" type="Texture" id=1]
+[ext_resource path="res://scripts/menu/fights_select.gd" type="Script" id=2]
+[ext_resource path="res://assets/fights/icon/baejitul2.png" type="Texture" id=3]
+
+[node name="Interface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 799.0
+margin_bottom = 384.0
+color = Color( 1, 1, 1, 0.301961 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 800.0
+margin_bottom = 380.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 800.0
+margin_bottom = 14.0
+text = "SELECIONE SEU LUTADOR"
+align = 1
+valign = 1
+
+[node name="Line1" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 800.0
+margin_bottom = 73.0
+alignment = 1
+
+[node name="SelectBox" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 167.0
+margin_right = 222.0
+margin_bottom = 55.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="RyanMan" type="TextureButton" parent="VBoxContainer/Line1/SelectBox"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 45.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox2" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 226.0
+margin_right = 281.0
+margin_bottom = 55.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="NOFIGHT" type="TextureButton" parent="VBoxContainer/Line1/SelectBox2"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 45.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox3" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 285.0
+margin_right = 340.0
+margin_bottom = 55.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Baejitul" type="TextureButton" parent="VBoxContainer/Line1/SelectBox3"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 45.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 3 )
+
+[node name="SelectBox4" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 344.0
+margin_right = 399.0
+margin_bottom = 55.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line1/SelectBox4"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 45.0
+margin_bottom = 55.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox5" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 403.0
+margin_right = 438.0
+margin_bottom = 55.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line1/SelectBox5"]
+margin_right = 35.0
+margin_bottom = 55.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox6" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 442.0
+margin_right = 477.0
+margin_bottom = 55.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line1/SelectBox6"]
+margin_right = 35.0
+margin_bottom = 55.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox7" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 481.0
+margin_right = 516.0
+margin_bottom = 55.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line1/SelectBox7"]
+margin_right = 35.0
+margin_bottom = 55.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox8" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 520.0
+margin_right = 555.0
+margin_bottom = 55.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line1/SelectBox8"]
+margin_right = 35.0
+margin_bottom = 55.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox9" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 559.0
+margin_right = 594.0
+margin_bottom = 55.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line1/SelectBox9"]
+margin_right = 35.0
+margin_bottom = 55.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox10" type="MarginContainer" parent="VBoxContainer/Line1"]
+margin_left = 598.0
+margin_right = 633.0
+margin_bottom = 55.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line1/SelectBox10"]
+margin_right = 35.0
+margin_bottom = 55.0
+texture_normal = ExtResource( 1 )
+
+[node name="Line2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 77.0
+margin_right = 800.0
+margin_bottom = 112.0
+alignment = 1
+
+[node name="SelectBox" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 207.0
+margin_right = 242.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox2" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 246.0
+margin_right = 281.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox2"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox3" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 285.0
+margin_right = 320.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox3"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox4" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 324.0
+margin_right = 359.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox4"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox5" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 363.0
+margin_right = 398.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox5"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox6" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 402.0
+margin_right = 437.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox6"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox7" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 441.0
+margin_right = 476.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox7"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox8" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 480.0
+margin_right = 515.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox8"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox9" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 519.0
+margin_right = 554.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox9"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[node name="SelectBox10" type="MarginContainer" parent="VBoxContainer/Line2"]
+margin_left = 558.0
+margin_right = 593.0
+margin_bottom = 35.0
+
+[node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox10"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture_normal = ExtResource( 1 )
+
+[connection signal="pressed" from="VBoxContainer/Line1/SelectBox/RyanMan" to="." method="_on_RyanMan_pressed"]
+[connection signal="pressed" from="VBoxContainer/Line1/SelectBox3/Baejitul" to="." method="_on_Baejitul_pressed"]
