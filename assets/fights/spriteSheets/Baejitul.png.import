@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Baejitul(ALL).png-26115ac007aeca21e913bc03ae66895b.stex"
+path="res://.import/Baejitul.png-f9cba8dd5ae76ac85819833b317f857b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fights/spriteSheets/Baejitul(ALL).png"
-dest_files=[ "res://.import/Baejitul(ALL).png-26115ac007aeca21e913bc03ae66895b.stex" ]
+source_file="res://assets/fights/spriteSheets/Baejitul.png"
+dest_files=[ "res://.import/Baejitul.png-f9cba8dd5ae76ac85819833b317f857b.stex" ]
 
 [params]
 

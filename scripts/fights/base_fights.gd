@@ -50,17 +50,6 @@ export(int) var healt = 100
 export(int) var mana = 0
 
 var combo_keys: Dictionary
-var special_cust: Dictionary = {
-	"jumpKick": 15,
-	"jumpPunch": 15,
-	"kick": 10,
-	"punch": 10,
-	"special1": -20,
-	"special2": -30,
-	"special3": -50,
-	"special4": -60,
-	"super": -100,
-}
 
 # COMBOS AND MOVIMENTOS
 enum{MOVE, JUMP, ROLL, STOP}
@@ -282,19 +271,22 @@ func moviment_animation(distance: float, duration: float, y_moviment: float = 0.
 func check_sequence(combo: Array) -> void:
 	for moviment in combo_keys.keys():
 		if combo == combo_keys[moviment]:
-			var cost: int = special_cust.get(moviment, 0)
+			var cost: int = Global.special_cust.get(moviment, 0)
 			if mana < (cost * -1):
 				return
 			mana += cost
 			healtBar.set_mana(mana)
 			special = moviment
 
-func basic_attack(damage: float) -> void:
+# Não esquecer de remover o dano
+func basic_attack(damage: float = 0.0) -> void:
 	if not player_ref:
 		return
+	if not damage:
+		damage = Global.attack_damage.get(special, 0)
 	player_ref.take_damage(damage)
 	$HitCount.start()
-	mana += special_cust.get(special, 0)
+	mana += Global.special_cust.get(special, 0)
 	healtBar.set_mana(mana)
 
 func atack_move() -> void:
@@ -338,16 +330,17 @@ func on_DamageCooldown_timeout() -> void:
 
 func on_HitBox_area_entered(area:Area2D) -> void:
 	var parent = area.get_parent()
-	if parent.get_groups() != get_groups():
-		player_ref = parent
+	if parent.get_groups() == get_groups():
+		return
 
-		if special == 'jumpPunch':
-			basic_attack(30)
-			on_animation_finished(special)
-		elif special == "runKick":
-			basic_attack(20)
-			impact()
-			on_animation_finished(special)
+	player_ref = parent
+	if special == 'jumpPunch':
+		basic_attack(30)
+		on_animation_finished(special)
+	elif special == "runKick":
+		basic_attack(20)
+		impact()
+		on_animation_finished(special)
 
 func on_HitBox_area_exited(_area: Area2D) -> void:
 	player_ref = null

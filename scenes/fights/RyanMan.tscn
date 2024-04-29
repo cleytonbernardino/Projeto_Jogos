@@ -810,17 +810,6 @@ tracks/6/keys = {
 "update": 0,
 "values": [ Vector2( 740, -89.9999 ) ]
 }
-tracks/7/type = "method"
-tracks/7/path = NodePath(".")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
-}
 
 [sub_resource type="Animation" id=11]
 resource_name = "kick"
@@ -938,10 +927,10 @@ tracks/4/keys = {
 "args": [ 40 ],
 "method": "center_attack"
 }, {
-"args": [ 10.0 ],
+"args": [ 0.0 ],
 "method": "basic_attack"
 }, {
-"args": [ 10.0 ],
+"args": [ 0.0 ],
 "method": "basic_attack"
 } ]
 }
@@ -1798,6 +1787,7 @@ collision_mask = 7
 script = ExtResource( 19 )
 jump_strength = -1.2
 healt = 1000
+mana = 10000
 
 [node name="Texture" type="Sprite" parent="."]
 texture = ExtResource( 1 )

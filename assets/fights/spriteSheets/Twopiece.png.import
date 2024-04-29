@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/life bar.png-5507ab99c3a91674cf3b8d999728ba63.stex"
+path="res://.import/Twopiece.png-3cb60978091d5d560a84fcfda21a9dad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/life bar.png"
-dest_files=[ "res://.import/life bar.png-5507ab99c3a91674cf3b8d999728ba63.stex" ]
+source_file="res://assets/fights/spriteSheets/Twopiece.png"
+dest_files=[ "res://.import/Twopiece.png-3cb60978091d5d560a84fcfda21a9dad.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
