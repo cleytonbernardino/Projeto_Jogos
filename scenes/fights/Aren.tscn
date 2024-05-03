@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://scripts/fights/aren.tres.gd" type="Script" id=1]
+[ext_resource path="res://scripts/fights/base_fights.gd" type="Script" id=1]
 [ext_resource path="res://assets/fights/spriteSheets/Aren.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=19]
@@ -86,8 +86,8 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=29]
-resource_name = "back dash_block"
-length = 0.1
+resource_name = "backdash"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -95,10 +95,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Rect2( 3, 554, 89, 98 ), Rect2( 95, 555, 82, 86 ) ]
+"values": [ Rect2( 3, 554, 89, 98 ) ]
 }
 
 [sub_resource type="Animation" id=30]
@@ -116,6 +116,47 @@ tracks/0/keys = {
 "update": 1,
 "values": [ Rect2( 3, 1130, 70, 101 ), Rect2( 77, 1130, 63, 98 ), Rect2( 146, 1130, 123, 94 ), Rect2( 273, 1130, 122, 96 ) ]
 }
+
+[sub_resource type="Animation" id=47]
+resource_name = "block"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Rect2( 95, 555, 82, 86 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "hitbox_status"
+} ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "damage"
+
+[sub_resource type="Animation" id=48]
+resource_name = "damage_full"
+length = 0.5
+
+[sub_resource type="Animation" id=49]
+resource_name = "damage_on_ar"
+length = 0.5
 
 [sub_resource type="Animation" id=32]
 resource_name = "dashing-kick"
@@ -223,10 +264,12 @@ tracks/2/keys = {
 "values": [ Vector2( 50, 190 ) ]
 }
 
+[sub_resource type="Animation" id=50]
+resource_name = "in_floor"
+length = 0.1
+
 [sub_resource type="Animation" id=37]
 resource_name = "jump"
-length = 0.3
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -545,7 +588,8 @@ extents = Vector2( 30, 48 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 1 )
-mana = 9999999
+healt = 99999
+mana = 99999
 
 [node name="Texture" type="Sprite" parent="."]
 scale = Vector2( 1.2, 1.2 )
@@ -561,13 +605,18 @@ shape = SubResource( 19 )
 [node name="Animation" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 26 )
 anims/aerial-kick = SubResource( 27 )
-"anims/back dash_block" = SubResource( 29 )
+anims/backdash = SubResource( 29 )
 anims/basic-kick = SubResource( 30 )
+anims/block = SubResource( 47 )
+anims/damage = SubResource( 46 )
+anims/damage_full = SubResource( 48 )
+anims/damage_on_ar = SubResource( 49 )
 anims/dashing-kick = SubResource( 32 )
 anims/dashing-punch = SubResource( 33 )
 anims/fall = SubResource( 34 )
 anims/hurt = SubResource( 35 )
 anims/idle = SubResource( 36 )
+anims/in_floor = SubResource( 50 )
 anims/jump = SubResource( 37 )
 anims/jumpPunch = SubResource( 28 )
 anims/punch = SubResource( 31 )

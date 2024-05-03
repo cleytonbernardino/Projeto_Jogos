@@ -1,10 +1,10 @@
 extends KinematicBody2D
 class_name BaseFights
 
-# NÃO ESQUECER DE COMENTAR O CODIGO !!!
 # NÃO ESQUECER DE REMOVER OS PRINTS DE DEBUG !!!
 # NÃO ESQUECER DE BALACEAR OS PERSONAGENS !!!
 # NÃO ESQUECER DE REVISAR AS FUNÇÃO !!! -- IMPORTANTE mesmo que seja CHATO
+# REMOVER A FUNÇÃO DE CORRER SE NÃO USAR
 
 # NOS
 onready var sprite: Sprite = $Texture
@@ -26,6 +26,7 @@ var keys: Dictionary = {
 	"punch": "punch",
 	"block": "block"
 }
+var combo_keys: Dictionary
 
 # COMBOS
 var wait_time_combo: float = 0.2
@@ -40,16 +41,16 @@ var trash = null
 var player_ref = null
 var block: bool = false
 var death: bool = false
+var lazer: Object
 
-# MOVIMENT EXPORT
+# EXPORTs
 export(int) var move_speed = 20
 export(float) var jump_strength = -1.3
 export(float) var gravity = 1.0
 
 export(int) var healt = 100
 export(int) var mana = 0
-
-var combo_keys: Dictionary
+export(int) var projectile_damage = 30
 
 # COMBOS AND MOVIMENTOS
 enum{MOVE, JUMP, ROLL, STOP}
@@ -61,6 +62,7 @@ var healtBar: Control
 
 func _ready() -> void:
 	# Define os comando do player2
+	lazer = load("res://scenes/powers/%sLazer.tscn" % self.name)
 	if 'player2' in get_groups():
 		keys = {
 			"esquerda": "ui_left",
@@ -70,6 +72,15 @@ func _ready() -> void:
 			"punch": "ui_punch",
 			"block": "ui_block"
 		}
+	combo_keys = {
+		'runKick': [keys['baixo'], keys['punch']],
+		'super': [keys['direita'], keys['esquerda']],
+		'jumpKick': [keys['direita'], keys['cima'], keys['esquerda']],
+		'special1': [keys['esquerda'], keys['direita']],
+		'special2': [keys['direita'], keys['punch']],
+		'special3': [keys['baixo'], keys['baixo']]
+	}
+	
 	add_child(tween)
 	healtBar.DEBUG_set_max_heath(healt)
 	healtBar.DEBUG_set_max_mana(mana)
@@ -149,31 +160,13 @@ func _input(event: InputEvent) -> void:
 
 	time.start(wait_time_combo)
 
-func center_attack(x_offset: int) -> void:
-	"""
-		*OLD* alinha a sprite a colisão e a hitbox, em relação a possição do inimigo
-	"""
-	
-	if sprite.flip_h:
-		sprite.offset.x = x_offset * -1
-		return
-	sprite.offset.x = x_offset
-
 func enemy_pos() -> int:
-	"""
-		Retorna a direção que o personagem está olhando
-	"""
 	if sprite.flip_h:
 		return -1
 	else:
 		return 1
 
 func flip(sprite_direction: float) -> void:
-	"""
-		Gira a sprite e a posição de spawn de seu ataque lançável na direção informada onde
-		1 = olhando para a direita
-		-1 = olhando para a esquerda 
-	"""
 	if sprite_direction >= 0:
 		sprite.flip_h = false
 		direction = -1
@@ -208,6 +201,7 @@ func apply_gravity(delta: float) -> void:
 
 func jump(_delta: float) -> void:
 	velocity.y = jump_strength * 500
+	special = "jump"
 
 func take_damage(damage: int) -> void:
 	healt -= damage
@@ -269,14 +263,14 @@ func moviment_animation(distance: float, duration: float, y_moviment: float = 0.
 	trash = tween.start()
 
 func check_sequence(combo: Array) -> void:
-	for moviment in combo_keys.keys():
-		if combo == combo_keys[moviment]:
-			var cost: int = Global.special_cust.get(moviment, 0)
+	for moviments in combo_keys.keys():
+		if combo == combo_keys[moviments]:
+			var cost: int = Global.special_cust.get(moviments, 0)
 			if mana < (cost * -1):
 				return
 			mana += cost
 			healtBar.set_mana(mana)
-			special = moviment
+			special = moviments
 
 # Não esquecer de remover o dano
 func basic_attack(damage: float = 0.0) -> void:
@@ -294,6 +288,18 @@ func atack_move() -> void:
 		moviment_animation(200, 0.3)
 		return
 	moviment_animation(400, 0.6, 0.4)
+
+func projectile() -> void:
+	print(self.name)
+	var obj = lazer.instance()
+	get_parent().add_child(obj)
+	
+	var direction: int = 1 if sprite.flip_h == false else -1
+	obj.damage = projectile_damage
+	obj.direction = direction
+	obj.rotate(direction)
+	obj.global_position = point.global_position
+
 
 func change_collision(colision_state: bool = false) -> void:
 	self.set_collision_layer_bit(1, colision_state)
@@ -313,7 +319,6 @@ func impact() -> void:
 	player_ref.special = 'damage_full'
 
 func hitbox_status(status: bool = true):
-	# print("\n[DEBUG] hitbox_status: {0}".format([status]))
 	$HitBox.monitorable = status
 
 func on_ComboTime_timeout() -> void:
@@ -356,4 +361,3 @@ func on_animation_finished(_anim_name: String) -> void:
 
 	special = ''
 	change_collision(true)
-	# print("\n[DEBUG] on_animation_finish: {0}".format([anim_name]))

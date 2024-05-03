@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="projeto"
-run/main_scene="res://scenes/arena/cenarios.tscn"
+run/main_scene="res://scenes/menu/fights_select.tscn"
 config/icon="res://icon.png"
 
 [autoload]

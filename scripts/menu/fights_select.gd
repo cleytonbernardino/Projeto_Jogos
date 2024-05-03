@@ -6,8 +6,10 @@ var playerOneSelected: bool = false
 var playerTwoSelected: bool = false
 
 # Diretorio da cena dos lutadores
-var ryanMan: String = "res://scenes/fights/ryanMan.tscn"
-var baejitul: String = "res://scenes/fights/baejitul.tscn"
+var ryanMan: String = "res://scenes/fights/RyanMan.tscn"
+var baejitul: String = "res://scenes/fights/Baejitul.tscn"
+var cTonaldo: String = "res://scenes/fights/CTonaldo.tscn"
+var aren: String = "res://scenes/fights/Aren.tscn"
 
 # Carrega o cenario
 func go_to_level() -> void:
@@ -29,5 +31,11 @@ func select_player(dir: String) -> void:
 func _on_RyanMan_pressed() -> void:
 	select_player(ryanMan)
 
-func _on_Baejitul_pressed():
+func _on_Baejitul_pressed() -> void:
 	select_player(baejitul)
+
+func _on_Aren_pressed() -> void:
+	select_player(aren)
+
+func _on_CTonaldo_pressed() -> void:
+	select_player(cTonaldo)

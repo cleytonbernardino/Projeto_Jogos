@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/fights/ryanMan/backdashAndBlock.png" type="Texture" id=6]
 [ext_resource path="res://assets/fights/ryanMan/damage.png" type="Texture" id=7]
 [ext_resource path="res://assets/fights/ryanMan/punch.png" type="Texture" id=8]
+[ext_resource path="res://scripts/fights/base_fights.gd" type="Script" id=9]
 [ext_resource path="res://assets/fights/ryanMan/runPunch.png" type="Texture" id=10]
 [ext_resource path="res://assets/fights/ryanMan/runKick.png" type="Texture" id=11]
 [ext_resource path="res://assets/fights/ryanMan/jumpPunch.png" type="Texture" id=12]
@@ -17,40 +18,6 @@
 [ext_resource path="res://assets/fights/ryanMan/special2.png" type="Texture" id=16]
 [ext_resource path="res://assets/fights/ryanMan/special4.png" type="Texture" id=17]
 [ext_resource path="res://assets/fights/ryanMan/super.png" type="Texture" id=18]
-
-[sub_resource type="GDScript" id=26]
-script/source = "# ESTE É UM EXEMPLO DE SCRIPT PARA OS LUTADORES FOI RETIRADO DO PERSONAGEM
-# RYAN MAN 
-
-# Herdando todas as função basica de lutadores
-extends \"res://scripts/fights/base_fights.gd\"
-
-# Referenciando cena do poder
-onready var lazer = preload(\"res://scenes/powers/ryanManLazer.tscn\")
-
-func _ready():
-	# Digite aqui todos os possiveis combos que podem ser realizado
-	combo_keys = {
-		\"power1\": ['tecla1', 'tecla2', 'tecla 3'],
-		\"power2\": ['tecla1', 'tecla2', 'tecla 3'],
-	}
-
-# Essa função define o ponto de partida do poder e relação ao mundo
-func special1() -> void:
-	# Intanciando o poder
-	var obj = lazer.instance()
-	
-	# Adicionado ele ao mundo
-	get_parent().add_child(obj)
-	
-	# Defino a direlção que ele vai andar com base na rotação do personagem
-	obj.direction = 1 if sprite.flip_h == false else -1
-	
-	# Defino a posição que o poder vai aparecer com base no Point do personage
-	# Point é um local de marcação previamente definido
-	obj.global_position = $Point.global_position
-
-"
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 31.5, 47 )
@@ -1270,7 +1237,7 @@ extents = Vector2( 30, 48 )
 [node name="DefaultFight" type="KinematicBody2D" groups=["player1"]]
 collision_layer = 2
 collision_mask = 7
-script = SubResource( 26 )
+script = ExtResource( 9 )
 
 [node name="Texture" type="Sprite" parent="."]
 texture = ExtResource( 1 )

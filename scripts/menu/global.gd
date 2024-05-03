@@ -1,7 +1,7 @@
 extends Node
 
-var playerOneDir: String = "res://scenes/fights/Aren.tscn"
-var playerTwoDir: String = "res://scenes/fights/CTonaldo.tscn"
+var playerOneDir: String = "res://scenes/fights/RyanMan.tscn"
+var playerTwoDir: String = "res://scenes/fights/Aren.tscn"
 
 
 var attack_damage: Dictionary = {
