@@ -10,6 +10,7 @@ var ryanMan: String = "res://scenes/fights/RyanMan.tscn"
 var baejitul: String = "res://scenes/fights/Baejitul.tscn"
 var cTonaldo: String = "res://scenes/fights/CTonaldo.tscn"
 var aren: String = "res://scenes/fights/Aren.tscn"
+var capAfrica: String = "res://scenes/fights/CapAfrica.tscn"
 
 # Carrega o cenario
 func go_to_level() -> void:

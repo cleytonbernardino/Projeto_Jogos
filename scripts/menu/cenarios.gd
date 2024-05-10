@@ -56,6 +56,7 @@ func _on_Button2_pressed():
 	sprite.frame += 1
 
 func on_MapLimit_body_entered(body: KinematicBody2D) -> void:
+	print(body.animation.current_animation)
 	if "player1" in body.get_groups():
 		body.global_position = $Player1.global_position
 		return

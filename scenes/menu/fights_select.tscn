@@ -1,15 +1,21 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fights/icon/ryanManSelect.png" type="Texture" id=1]
 [ext_resource path="res://scripts/menu/fights_select.gd" type="Script" id=2]
 [ext_resource path="res://assets/fights/icon/baejitulSelect.png" type="Texture" id=3]
 [ext_resource path="res://assets/fights/icon/arenSelect.png" type="Texture" id=4]
 [ext_resource path="res://assets/fights/icon/cTonaldoSelect.png" type="Texture" id=5]
+[ext_resource path="res://assets/font/BROMPH_TOWN.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/cenario/PersonSelectBG.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 1440, 900 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+extra_spacing_bottom = 10
+font_data = ExtResource( 6 )
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -21,24 +27,34 @@ margin_right = 1440.0
 margin_bottom = 900.0
 custom_styles/panel = SubResource( 1 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 470.0
+margin_top = 331.0
+margin_right = 972.0
+margin_bottom = 674.0
+color = Color( 0.835294, 0.32549, 0.32549, 1 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 477.0
-margin_top = 442.0
-margin_right = 977.0
-margin_bottom = 692.0
+margin_left = 389.0
+margin_top = 226.0
+margin_right = 889.0
+margin_bottom = 476.0
+rect_scale = Vector2( 1.4334, 1.76365 )
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 500.0
-margin_bottom = 14.0
+margin_right = 499.0
+margin_bottom = 60.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "SELECIONE SEU LUTADOR"
 align = 1
 valign = 1
 
 [node name="Line1" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 18.0
-margin_right = 500.0
-margin_bottom = 73.0
+margin_top = 64.0
+margin_right = 499.0
+margin_bottom = 119.0
 alignment = 1
 
 [node name="SelectBox" type="MarginContainer" parent="VBoxContainer/Line1"]
@@ -165,14 +181,14 @@ margin_bottom = 55.0
 texture_normal = ExtResource( 1 )
 
 [node name="Line2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 77.0
-margin_right = 500.0
-margin_bottom = 112.0
+margin_top = 123.0
+margin_right = 499.0
+margin_bottom = 158.0
 alignment = 1
 
 [node name="SelectBox" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 57.0
-margin_right = 92.0
+margin_left = 56.0
+margin_right = 91.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox"]
@@ -181,8 +197,8 @@ margin_bottom = 35.0
 texture_normal = ExtResource( 1 )
 
 [node name="SelectBox2" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 96.0
-margin_right = 131.0
+margin_left = 95.0
+margin_right = 130.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox2"]
@@ -191,8 +207,8 @@ margin_bottom = 35.0
 texture_normal = ExtResource( 1 )
 
 [node name="SelectBox3" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 135.0
-margin_right = 170.0
+margin_left = 134.0
+margin_right = 169.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox3"]
@@ -201,8 +217,8 @@ margin_bottom = 35.0
 texture_normal = ExtResource( 1 )
 
 [node name="SelectBox4" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 174.0
-margin_right = 209.0
+margin_left = 173.0
+margin_right = 208.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox4"]
@@ -211,8 +227,8 @@ margin_bottom = 35.0
 texture_normal = ExtResource( 1 )
 
 [node name="SelectBox5" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 213.0
-margin_right = 248.0
+margin_left = 212.0
+margin_right = 247.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox5"]
@@ -221,8 +237,8 @@ margin_bottom = 35.0
 texture_normal = ExtResource( 1 )
 
 [node name="SelectBox6" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 252.0
-margin_right = 287.0
+margin_left = 251.0
+margin_right = 286.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox6"]
@@ -231,8 +247,8 @@ margin_bottom = 35.0
 texture_normal = ExtResource( 1 )
 
 [node name="SelectBox7" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 291.0
-margin_right = 326.0
+margin_left = 290.0
+margin_right = 325.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox7"]
@@ -241,8 +257,8 @@ margin_bottom = 35.0
 texture_normal = ExtResource( 1 )
 
 [node name="SelectBox8" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 330.0
-margin_right = 365.0
+margin_left = 329.0
+margin_right = 364.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox8"]
@@ -251,8 +267,8 @@ margin_bottom = 35.0
 texture_normal = ExtResource( 1 )
 
 [node name="SelectBox9" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 369.0
-margin_right = 404.0
+margin_left = 368.0
+margin_right = 403.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox9"]
@@ -261,8 +277,8 @@ margin_bottom = 35.0
 texture_normal = ExtResource( 1 )
 
 [node name="SelectBox10" type="MarginContainer" parent="VBoxContainer/Line2"]
-margin_left = 408.0
-margin_right = 443.0
+margin_left = 407.0
+margin_right = 442.0
 margin_bottom = 35.0
 
 [node name="FightButton" type="TextureButton" parent="VBoxContainer/Line2/SelectBox10"]

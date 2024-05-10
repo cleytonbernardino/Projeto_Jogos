@@ -632,10 +632,11 @@ extents = Vector2( 81.6667, 230.001 )
 extents = Vector2( 30, 48 )
 
 [node name="CTonaldo" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 2 )
-mana = 9999999
+healt = 1000
 
 [node name="Texture" type="Sprite" parent="."]
 texture = ExtResource( 1 )

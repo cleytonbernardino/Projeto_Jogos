@@ -104,6 +104,30 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Vector2( 2.5, -5.5 ) ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("HitBox/Collision:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Texture:offset")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -20 ) ]
+}
 
 [sub_resource type="Animation" id=44]
 resource_name = "backdash"
@@ -204,7 +228,55 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 11, -16.75 ) ]
+"values": [ Vector2( 9.33333, -28.6667 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitBox/Collision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -47.3333 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AttackBox/Collision:shape:extents")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 25, 73.7501 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AttackBox/Collision:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.66667, -200 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Texture:offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -20 ) ]
 }
 
 [sub_resource type="Animation" id=47]
@@ -309,7 +381,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2.5, -5.5 ) ]
+"values": [ Vector2( 0, -5.5 ) ]
 }
 
 [sub_resource type="Animation" id=48]
@@ -350,7 +422,43 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 11, -16.75 ) ]
+"values": [ Vector2( 9.33333, -28.6667 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitBox/Collision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.666667, -46 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AttackBox/Collision:shape:extents")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 25, 73.7501 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AttackBox/Collision:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.66667, -200 ) ]
 }
 
 [sub_resource type="Animation" id=30]
@@ -1090,18 +1198,19 @@ extents = Vector2( 25, 73.7501 )
 extents = Vector2( 30, 48 )
 
 [node name="Baejitul" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 2 )
+healt = 1000
 
 [node name="Texture" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-offset = Vector2( 0, -15 )
+offset = Vector2( 0, -20 )
 region_enabled = true
 region_rect = Rect2( 10, 38, 75, 131 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 2.5, -5.5 )
 shape = SubResource( 19 )
 

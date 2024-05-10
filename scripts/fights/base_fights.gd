@@ -61,8 +61,11 @@ var tween: Tween = Tween.new()
 var healtBar: Control
 
 func _ready() -> void:
+	var name: String = self.name
+	if "@" in name:
+		name = self.name.split("@")[1]
+	lazer = load("res://scenes/powers/%sLazer.tscn" % name)
 	# Define os comando do player2
-	lazer = load("res://scenes/powers/%sLazer.tscn" % self.name)
 	if 'player2' in get_groups():
 		keys = {
 			"esquerda": "ui_left",
@@ -74,9 +77,9 @@ func _ready() -> void:
 		}
 	combo_keys = {
 		'runKick': [keys['baixo'], keys['punch']],
-		'super': [keys['direita'], keys['esquerda']],
+		'super': [keys['punch'], keys['punch'], keys['esquerda']],
 		'jumpKick': [keys['direita'], keys['cima'], keys['esquerda']],
-		'special1': [keys['esquerda'], keys['direita']],
+		'special1': [keys['direita'], keys['esquerda']],
 		'special2': [keys['direita'], keys['punch']],
 		'special3': [keys['baixo'], keys['baixo']]
 	}
