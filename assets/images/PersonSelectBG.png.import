@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lifeBar.png-85cbde02db34abe12ce888e67c6c58c3.stex"
+path="res://.import/PersonSelectBG.png-d02071209b5a1a86273d11ca841e2722.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenario/lifeBar.png"
-dest_files=[ "res://.import/lifeBar.png-85cbde02db34abe12ce888e67c6c58c3.stex" ]
+source_file="res://assets/images/PersonSelectBG.png"
+dest_files=[ "res://.import/PersonSelectBG.png-d02071209b5a1a86273d11ca841e2722.stex" ]
 
 [params]
 

@@ -1,16 +1,15 @@
 extends Node2D
-
-# TEMP
 onready var sprite: Sprite = $Texture
-export(int, 20) var cenario = 14
+onready var delay: Timer = $WinDelay
 
 var playerOne: KinematicBody2D
 var playerTwo: KinematicBody2D
 
+var wait: bool = false
+
 func _ready() -> void:
-	# REMOVER DPS
-	sprite.frame = cenario
-	
+	randomize()
+	sprite.frame = randi() % 21;
 	
 	playerOne = load(Global.playerOneDir).instance()
 	playerTwo = load(Global.playerTwoDir).instance()
@@ -31,11 +30,21 @@ func _ready() -> void:
 	add_child(playerTwo)
 
 func _process(_delta: float) -> void:
+	if wait:
+		return
 	if playerOne.death:
-		playerTwo.special = "run"
+		wait = true
+		Global.Wins[1] += 1
+		$HealthBa2r.add_win()
+		playerTwo.special = "idle"
+		delay.start()
 		return
 	elif playerTwo.death:
-		playerOne.special = "run"
+		wait = true
+		Global.wins[0] += 1
+		$HealthBar.add_win()
+		playerOne.special = "idle"
+		delay.start()
 		return
 	
 	if playerOne.global_position < playerTwo.global_position:
@@ -45,9 +54,9 @@ func _process(_delta: float) -> void:
 		playerTwo.flip(1)
 		playerOne.flip(-1)
 
-
 func _on_Button_pressed():
-	var _trash = get_tree().change_scene("res://scenes/arena/cenarios.tscn")
+	Global.wins = [0, 0]
+	get_tree().reload_current_scene()
 
 func _on_Button2_pressed():
 	if sprite.frame == 20:
@@ -61,3 +70,9 @@ func on_MapLimit_body_entered(body: KinematicBody2D) -> void:
 		body.global_position = $Player1.global_position
 		return
 	body.global_position = $Player2.global_position
+
+func _on_WinDelay_timeout() -> void:
+	if Global.wins[0] == 2 or Global.wins[1] == 2:
+		print("FIM DA BATALHA")
+		return
+	get_tree().reload_current_scene()

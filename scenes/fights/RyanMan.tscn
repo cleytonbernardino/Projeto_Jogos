@@ -741,7 +741,6 @@ scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 19 )
-healt = 1000
 mana = 999999
 
 [node name="Texture" type="Sprite" parent="."]

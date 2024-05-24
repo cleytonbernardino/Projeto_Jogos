@@ -1,44 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/cenario/lifeBar.png" type="Texture" id=1]
-[ext_resource path="res://assets/cenario/lifeAndMagic.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/lifeBar.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/lifeAndMagic.png" type="Texture" id=2]
 [ext_resource path="res://assets/fights/icon/ryanman.png" type="Texture" id=3]
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends Control
-class_name HealthBar
-
-onready var health: ProgressBar = $HealthBar
-onready var mana: ProgressBar = $ManaBar
-onready var icon: TextureRect = $PlayerIcon
-
-# MELHOR ISSO
-func set_icon(fight_name: String) -> void:
-	var path: String = \"res://assets/fights/icon/{0}.png\".format([fight_name])
-	var texture: Texture = ImageTexture.new()
-
-	texture.load(path)
-	icon.set_texture(texture)
-
-func DEBUG_set_max_heath(heath_value: int) -> void:
-	health.max_value = heath_value
-	health.value = heath_value
-
-func DEBUG_set_max_mana(mana_value: int) -> void:
-	if mana_value <= 0:
-		mana.max_value = 100
-		mana.value = 0
-		return
-
-	mana.max_value = mana_value
-	mana.value = mana_value
-
-func damage(value: int) -> void:
-	health.value -= value
-
-func set_mana(value: int) -> void:
-	mana.value = value
-"
+[ext_resource path="res://scripts/menu/healthBar.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
@@ -51,7 +16,7 @@ region_rect = Rect2( 406, 826, 798, 28 )
 [node name="HealthBar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource( 3 )
+script = ExtResource( 4 )
 
 [node name="PlayerIcon" type="TextureRect" parent="."]
 margin_left = 60.0
@@ -85,6 +50,20 @@ rect_rotation = 180.0
 custom_styles/fg = SubResource( 2 )
 value = 40.0
 percent_visible = false
+
+[node name="Win1" type="ColorRect" parent="."]
+margin_left = 49.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 13.0
+color = Color( 1, 1, 1, 0.235294 )
+
+[node name="Win2" type="ColorRect" parent="."]
+margin_left = 32.0
+margin_top = 3.0
+margin_right = 43.0
+margin_bottom = 13.0
+color = Color( 1, 1, 1, 0.235294 )
 
 [node name="Frame" type="TextureRect" parent="."]
 margin_left = -152.0

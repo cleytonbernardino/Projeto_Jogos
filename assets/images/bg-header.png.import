@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lifeAndMagic.png-5e386178763deb02e2f7623e00f9be34.stex"
+path="res://.import/bg-header.png-977961099d99249636f67b473882cf21.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenario/lifeAndMagic.png"
-dest_files=[ "res://.import/lifeAndMagic.png-5e386178763deb02e2f7623e00f9be34.stex" ]
+source_file="res://assets/images/bg-header.png"
+dest_files=[ "res://.import/bg-header.png-977961099d99249636f67b473882cf21.stex" ]
 
 [params]
 

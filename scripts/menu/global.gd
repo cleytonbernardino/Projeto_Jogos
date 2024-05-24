@@ -1,8 +1,8 @@
 extends Node
 
 var playerOneDir: String = "res://scenes/fights/RyanMan.tscn"
-var playerTwoDir: String = "res://scenes/fights/Aren.tscn"
-
+var playerTwoDir: String = "res://scenes/fights/Baejitul.tscn"
+var wins: Array = [0, 0] # 0 - Player One | 1 - Player Two
 
 var attack_damage: Dictionary = {
 	"punch": 20,

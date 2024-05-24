@@ -1,42 +1,33 @@
 extends Control
 
-# FAZER A OPÇÃO DE REMOVE JÁ SELECIONADO
+onready var person_select: ItemList = $ItemList
 
 var playerOneSelected: bool = false
 var playerTwoSelected: bool = false
+var playerOneColor: Color = Color(255, 0, 0)
+var playerTwoColor: Color = Color(0, 0, 255)
 
-# Diretorio da cena dos lutadores
-var ryanMan: String = "res://scenes/fights/RyanMan.tscn"
-var baejitul: String = "res://scenes/fights/Baejitul.tscn"
-var cTonaldo: String = "res://scenes/fights/CTonaldo.tscn"
-var aren: String = "res://scenes/fights/Aren.tscn"
-var capAfrica: String = "res://scenes/fights/CapAfrica.tscn"
+
+var person_dir: Array = [
+	"res://scenes/fights/Aren.tscn",
+	"res://scenes/fights/Baejitul.tscn",
+	"res://scenes/fights/CapAfrica.tscn",
+	"res://scenes/fights/CTonaldo.tscn",
+	"res://scenes/fights/RyanMan.tscn",
+]
 
 # Carrega o cenario
 func go_to_level() -> void:
 	if playerOneSelected and playerTwoSelected:
 		get_tree().change_scene("res://scenes/arena/cenarios.tscn")
 
-# Verifica e se os dois jogadores ja foram escolhidos
-func select_player(dir: String) -> void:
-	print(dir)
+func _on_ItemList_item_selected(index: int) -> void:
 	if not playerOneSelected:
 		playerOneSelected = true
-		Global.playerOneDir = dir
+		person_select.set_item_custom_bg_color(index, playerOneColor)
+		Global.playerOneDir = person_dir[index]
 	else:
 		playerTwoSelected = true
-		Global.playerTwoDir = dir
+		person_select.set_item_custom_bg_color(index, playerOneColor)
+		Global.playerOneDir = person_dir[index]
 	go_to_level()
-
-# BOTOES DE SELEÇÃO DOS PERSONAGENS
-func _on_RyanMan_pressed() -> void:
-	select_player(ryanMan)
-
-func _on_Baejitul_pressed() -> void:
-	select_player(baejitul)
-
-func _on_Aren_pressed() -> void:
-	select_player(aren)
-
-func _on_CTonaldo_pressed() -> void:
-	select_player(cTonaldo)

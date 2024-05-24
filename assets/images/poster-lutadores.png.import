@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PersonSelectBG.png-d2be1cda5c63b01d9c679bd14ba97b90.stex"
+path="res://.import/poster-lutadores.png-5a5d558e1fd63a5b9c106f7ca7bd271d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenario/PersonSelectBG.png"
-dest_files=[ "res://.import/PersonSelectBG.png-d2be1cda5c63b01d9c679bd14ba97b90.stex" ]
+source_file="res://assets/images/poster-lutadores.png"
+dest_files=[ "res://.import/poster-lutadores.png-5a5d558e1fd63a5b9c106f7ca7bd271d.stex" ]
 
 [params]
 
