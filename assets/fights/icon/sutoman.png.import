@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baejitulSelect.png-26d73e65da5079228ee4eb804df6b9f7.stex"
+path="res://.import/sutoman.png-9f6b4ae97f9e33da50f45560d29b9575.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fights/icon/baejitulSelect.png"
-dest_files=[ "res://.import/baejitulSelect.png-26d73e65da5079228ee4eb804df6b9f7.stex" ]
+source_file="res://assets/fights/icon/sutoman.png"
+dest_files=[ "res://.import/sutoman.png-9f6b4ae97f9e33da50f45560d29b9575.stex" ]
 
 [params]
 

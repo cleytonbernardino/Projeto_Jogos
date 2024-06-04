@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baejitulSelect.png-26d73e65da5079228ee4eb804df6b9f7.stex"
+path="res://.import/capAfrica.png-ab967bed23a6ddd08f7a107437df1245.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fights/icon/baejitulSelect.png"
-dest_files=[ "res://.import/baejitulSelect.png-26d73e65da5079228ee4eb804df6b9f7.stex" ]
+source_file="res://assets/fights/icon/capAfrica.png"
+dest_files=[ "res://.import/capAfrica.png-ab967bed23a6ddd08f7a107437df1245.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

@@ -603,6 +603,7 @@ position = Vector2( 0, -1 )
 shape = SubResource( 19 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 anims/RESET = SubResource( 26 )
 anims/aerial-kick = SubResource( 27 )
 anims/backdash = SubResource( 29 )

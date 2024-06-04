@@ -1,6 +1,8 @@
 extends Area2D
 class_name Projectile
 
+onready var animation: AnimationPlayer = $Animation
+
 export(int) var move_speed = 720
 export(int) var damage = 70
 
@@ -14,6 +16,9 @@ func rotate(sprite_direction: float) -> void:
 		$Texture.flip_h = false
 	elif sprite_direction == -1:
 		$Texture.flip_h = true
+	
+func change_animation(animation_name: String) -> void:
+	animation.play(animation_name)
 	
 func on_screen_exited():
 	queue_free()

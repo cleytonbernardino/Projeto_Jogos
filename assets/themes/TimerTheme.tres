@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[resource]
+TextEdit/colors/font_color = Color( 0, 0, 0, 1 )
+TextEdit/colors/font_color_readonly = Color( 0, 0, 0, 1 )
+TextEdit/colors/selection_color = Color( 0.0196078, 0.0196078, 0.0196078, 0 )
+TextEdit/styles/normal = SubResource( 1 )
+TextEdit/styles/read_only = SubResource( 2 )

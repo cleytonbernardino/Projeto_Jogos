@@ -21,10 +21,10 @@ func set_icon(fight_name: String) -> void:
 func add_win() -> void:
 	var current_wins:int = Global.wins[0] if self.name == "HealthBar" else Global.wins[1]
 	if current_wins == 1:
-		win1.color = "#3b49eb"
+		win1.color = "#5260f2"
 	elif current_wins == 2:
-		win1.color = "#3b49eb"
-		win2.color = "#3b49eb"
+		win1.color = "#5260f2"
+		win2.color = "#5260f2"
 
 func DEBUG_set_max_heath(heath_value: int) -> void:
 	health.max_value = heath_value

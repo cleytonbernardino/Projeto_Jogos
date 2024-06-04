@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://assets/fights/icon/baejitulSelect.png" type="Texture" id=1]
 [ext_resource path="res://scripts/menu/fights_select.gd" type="Script" id=2]
@@ -6,6 +6,20 @@
 [ext_resource path="res://assets/fights/icon/arenSelect.png" type="Texture" id=4]
 [ext_resource path="res://assets/fights/icon/ryanManSelect.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/bg-header.png" type="Texture" id=6]
+[ext_resource path="res://assets/fights/spriteSheets/Badman.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/selecao de lutadoresa.png" type="Texture" id=8]
+[ext_resource path="res://assets/fights/icon/capAfricaSelect.png" type="Texture" id=9]
+[ext_resource path="res://assets/fights/icon/sonogongSelect.png" type="Texture" id=10]
+[ext_resource path="res://assets/fights/icon/sutomanSelect.png" type="Texture" id=11]
+[ext_resource path="res://assets/fights/icon/badmanSelect.png" type="Texture" id=12]
+[ext_resource path="res://assets/themes/FightSelectButton.tres" type="Theme" id=13]
+[ext_resource path="res://assets/fights/spriteSheets/Baejitul.png" type="Texture" id=14]
+[ext_resource path="res://assets/fights/spriteSheets/CAfrica.png" type="Texture" id=15]
+[ext_resource path="res://assets/fights/spriteSheets/RyanMan.png" type="Texture" id=16]
+[ext_resource path="res://assets/fights/spriteSheets/Sonogong.png" type="Texture" id=17]
+[ext_resource path="res://assets/fights/spriteSheets/Sutaman.png" type="Texture" id=18]
+[ext_resource path="res://assets/fights/spriteSheets/CTonaldo.png" type="Texture" id=19]
+[ext_resource path="res://assets/fonts/BROMPH_TOWN.ttf" type="DynamicFontData" id=20]
 
 [sub_resource type="StyleBoxTexture" id=53]
 texture = ExtResource( 6 )
@@ -14,803 +28,25 @@ region_rect = Rect2( 0, 0, 1440, 822 )
 [sub_resource type="Theme" id=54]
 Panel/styles/panel = SubResource( 53 )
 
+[sub_resource type="StyleBoxTexture" id=61]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 95, 95 )
+
+[sub_resource type="Theme" id=62]
+Panel/styles/panel = SubResource( 61 )
+
+[sub_resource type="StreamTexture" id=63]
+flags = 4
+load_path = "res://.import/badmanSelect.png-63b1f22dd1e614d905c520223e99f717.stex"
+
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/Aren.png-5b24b917dcfcb15c265248bfac42201f.stex"
-
-[sub_resource type="Animation" id=2]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 85, 19, 78, 85 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 25, 73.7501 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 50, 190 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "aerial-kick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1360, 65, 82 ), Rect2( 73, 1360, 58, 81 ), Rect2( 142, 1359, 145, 81 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 132.5, 186.876 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 372.5, 76.8748 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "backdash"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Rect2( 3, 554, 89, 98 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "basic-kick"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1130, 70, 101 ), Rect2( 77, 1130, 63, 98 ), Rect2( 146, 1130, 123, 94 ), Rect2( 273, 1130, 122, 96 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "block"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Rect2( 95, 555, 82, 86 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ false ],
-"method": "hitbox_status"
-} ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "damage"
-
-[sub_resource type="Animation" id=8]
-resource_name = "damage_full"
-length = 0.5
-
-[sub_resource type="Animation" id=9]
-resource_name = "damage_on_ar"
-length = 0.5
-
-[sub_resource type="Animation" id=10]
-resource_name = "dashing-kick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1581, 75, 100 ), Rect2( 82, 1581, 68, 86 ), Rect2( 153, 1581, 71, 84 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-resource_name = "dashing-punch"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1462, 75, 96 ), Rect2( 84, 1461, 147, 84 ), Rect2( 235, 1460, 159, 98 ), Rect2( 398, 1461, 158, 99 ) ]
-}
-
-[sub_resource type="Animation" id=12]
-resource_name = "fall"
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 787, 95, 93 ), Rect2( 102, 786, 115, 86 ), Rect2( 222, 787, 68, 108 ), Rect2( 299, 787, 68, 108 ), Rect2( 374, 787, 123, 54 ), Rect2( 502, 787, 83, 92 ) ]
-}
-
-[sub_resource type="Animation" id=13]
-resource_name = "hurt"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Rect2( 2, 671, 84, 97 ), Rect2( 89, 670, 64, 80 ) ]
-}
-
-[sub_resource type="Animation" id=14]
-resource_name = "idle"
-length = 0.3
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 19, 78, 88 ), Rect2( 85, 19, 78, 85 ), Rect2( 167, 18, 79, 84 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 25, 73.7501 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 50, 190 ) ]
-}
-
-[sub_resource type="Animation" id=15]
-resource_name = "in_floor"
-length = 0.1
-
-[sub_resource type="Animation" id=16]
-resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 339, 83, 81 ), Rect2( 92, 339, 85, 105 ), Rect2( 179, 339, 80, 99 ), Rect2( 263, 339, 79, 94 ) ]
-}
-
-[sub_resource type="Animation" id=17]
-resource_name = "jumpPunch"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1250, 94, 86 ), Rect2( 101, 1249, 65, 90 ), Rect2( 169, 1250, 101, 91 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 90, 185.001 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 270, 115 ) ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "atack_move"
-} ]
-}
-
-[sub_resource type="Animation" id=18]
-resource_name = "punch"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1025, 78, 86 ), Rect2( 85, 1024, 82, 83 ), Rect2( 171, 1025, 114, 79 ), Rect2( 85, 1024, 82, 83 ), Rect2( 171, 1025, 114, 79 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ 0.0 ],
-"method": "basic_attack"
-}, {
-"args": [ 0.0 ],
-"method": "basic_attack"
-} ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 98.3334, 121.876 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AttackBox/Collision:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 305, -68.1252 ) ]
-}
-
-[sub_resource type="Animation" id=19]
-resource_name = "roll"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 463, 73, 55 ), Rect2( 78, 463, 55, 73 ), Rect2( 136, 462, 73, 55 ), Rect2( 213, 462, 55, 73 ) ]
-}
-
-[sub_resource type="Animation" id=20]
-resource_name = "run"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 235, 83, 82 ), Rect2( 92, 235, 88, 84 ), Rect2( 184, 235, 87, 84 ) ]
-}
-
-[sub_resource type="Animation" id=21]
-resource_name = "special1"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1701, 86, 88 ), Rect2( 97, 1701, 99, 85 ), Rect2( 199, 1701, 124, 85 ), Rect2( 330, 1701, 83, 85 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "projectile"
-} ]
-}
-
-[sub_resource type="Animation" id=22]
-resource_name = "special2"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1807, 130, 119 ), Rect2( 135, 1807, 200, 185 ), Rect2( 339, 1931, 170, 147 ), Rect2( 585, 1840, 142, 169 ), Rect2( 764, 1893, 86, 107 ) ]
-}
-
-[sub_resource type="Animation" id=23]
-resource_name = "special3"
-length = 0.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 2104, 70, 130 ), Rect2( 77, 2098, 81, 105 ), Rect2( 165, 2100, 170, 118 ), Rect2( 342, 2101, 180, 114 ), Rect2( 534, 2097, 160, 96 ), Rect2( 698, 2097, 158, 80 ) ]
-}
-
-[sub_resource type="Animation" id=24]
-resource_name = "super"
-length = 0.7
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 2254, 82, 79 ), Rect2( 89, 2256, 70, 95 ), Rect2( 164, 2256, 78, 87 ), Rect2( 246, 2254, 94, 65 ), Rect2( 348, 2254, 145, 81 ), Rect2( 502, 2254, 164, 103 ), Rect2( 674, 2256, 246, 143 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 406.667, 705.005 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -3.09944e-05, -14.9998 ) ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ 0.0 ],
-"method": "basic_attack"
-}, {
-"args": [ 0.0 ],
-"method": "basic_attack"
-} ]
-}
-
-[sub_resource type="Animation" id=25]
-resource_name = "unased"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 2, 913, 80, 89 ), Rect2( 86, 914, 78, 92 ), Rect2( 168, 914, 100, 85 ), Rect2( 272, 914, 87, 83 ) ]
-}
-
-[sub_resource type="Animation" id=26]
-resource_name = "walk"
-length = 0.3
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 6, 126, 53, 89 ), Rect2( 63, 126, 57, 90 ), Rect2( 124, 126, 59, 89 ) ]
-}
 
 [sub_resource type="StreamTexture" id=27]
 load_path = "res://.import/Aren.png-5b24b917dcfcb15c265248bfac42201f.stex"
 
-[sub_resource type="Animation" id=28]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 85, 19, 78, 85 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 25, 73.7501 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 50, 190 ) ]
-}
-
-[sub_resource type="Animation" id=29]
-resource_name = "aerial-kick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1360, 65, 82 ), Rect2( 73, 1360, 58, 81 ), Rect2( 142, 1359, 145, 81 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 132.5, 186.876 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 372.5, 76.8748 ) ]
-}
-
-[sub_resource type="Animation" id=30]
-resource_name = "backdash"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Rect2( 3, 554, 89, 98 ) ]
-}
-
-[sub_resource type="Animation" id=31]
-resource_name = "basic-kick"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1130, 70, 101 ), Rect2( 77, 1130, 63, 98 ), Rect2( 146, 1130, 123, 94 ), Rect2( 273, 1130, 122, 96 ) ]
-}
-
-[sub_resource type="Animation" id=32]
-resource_name = "block"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Rect2( 95, 555, 82, 86 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ false ],
-"method": "hitbox_status"
-} ]
-}
-
-[sub_resource type="Animation" id=33]
-resource_name = "damage"
-
-[sub_resource type="Animation" id=34]
-resource_name = "damage_full"
-length = 0.5
-
-[sub_resource type="Animation" id=35]
-resource_name = "damage_on_ar"
-length = 0.5
-
-[sub_resource type="Animation" id=36]
-resource_name = "dashing-kick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1581, 75, 100 ), Rect2( 82, 1581, 68, 86 ), Rect2( 153, 1581, 71, 84 ) ]
-}
-
-[sub_resource type="Animation" id=37]
-resource_name = "dashing-punch"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1462, 75, 96 ), Rect2( 84, 1461, 147, 84 ), Rect2( 235, 1460, 159, 98 ), Rect2( 398, 1461, 158, 99 ) ]
-}
-
-[sub_resource type="Animation" id=38]
-resource_name = "fall"
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 787, 95, 93 ), Rect2( 102, 786, 115, 86 ), Rect2( 222, 787, 68, 108 ), Rect2( 299, 787, 68, 108 ), Rect2( 374, 787, 123, 54 ), Rect2( 502, 787, 83, 92 ) ]
-}
-
-[sub_resource type="Animation" id=39]
-resource_name = "hurt"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Rect2( 2, 671, 84, 97 ), Rect2( 89, 670, 64, 80 ) ]
-}
-
-[sub_resource type="Animation" id=40]
-resource_name = "idle"
+[sub_resource type="Animation" id=56]
+resource_name = "Aren"
 length = 0.3
 loop = true
 tracks/0/type = "value"
@@ -826,7 +62,7 @@ tracks/0/keys = {
 "values": [ Rect2( 3, 19, 78, 88 ), Rect2( 85, 19, 78, 85 ), Rect2( 167, 18, 79, 84 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
+tracks/1/path = NodePath("Texture:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -834,321 +70,70 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 25, 73.7501 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 50, 190 ) ]
-}
-
-[sub_resource type="Animation" id=41]
-resource_name = "in_floor"
-length = 0.1
-
-[sub_resource type="Animation" id=42]
-resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 3, 339, 83, 81 ), Rect2( 92, 339, 85, 105 ), Rect2( 179, 339, 80, 99 ), Rect2( 263, 339, 79, 94 ) ]
+"values": [ SubResource( 1 ) ]
 }
 
-[sub_resource type="Animation" id=43]
-resource_name = "jumpPunch"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1250, 94, 86 ), Rect2( 101, 1249, 65, 90 ), Rect2( 169, 1250, 101, 91 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 90, 185.001 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 270, 115 ) ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "atack_move"
-} ]
-}
-
-[sub_resource type="Animation" id=44]
-resource_name = "punch"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1025, 78, 86 ), Rect2( 85, 1024, 82, 83 ), Rect2( 171, 1025, 114, 79 ), Rect2( 85, 1024, 82, 83 ), Rect2( 171, 1025, 114, 79 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ 0.0 ],
-"method": "basic_attack"
-}, {
-"args": [ 0.0 ],
-"method": "basic_attack"
-} ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:shape:extents")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 98.3334, 121.876 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AttackBox/Collision:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 305, -68.1252 ) ]
-}
-
-[sub_resource type="Animation" id=45]
-resource_name = "roll"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 463, 73, 55 ), Rect2( 78, 463, 55, 73 ), Rect2( 136, 462, 73, 55 ), Rect2( 213, 462, 55, 73 ) ]
-}
-
-[sub_resource type="Animation" id=46]
-resource_name = "run"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 235, 83, 82 ), Rect2( 92, 235, 88, 84 ), Rect2( 184, 235, 87, 84 ) ]
-}
-
-[sub_resource type="Animation" id=47]
-resource_name = "special1"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1701, 86, 88 ), Rect2( 97, 1701, 99, 85 ), Rect2( 199, 1701, 124, 85 ), Rect2( 330, 1701, 83, 85 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "projectile"
-} ]
-}
-
-[sub_resource type="Animation" id=48]
-resource_name = "special2"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1807, 130, 119 ), Rect2( 135, 1807, 200, 185 ), Rect2( 339, 1931, 170, 147 ), Rect2( 585, 1840, 142, 169 ), Rect2( 764, 1893, 86, 107 ) ]
-}
-
-[sub_resource type="Animation" id=49]
-resource_name = "special3"
-length = 0.6
+[sub_resource type="Animation" id=59]
+resource_name = "Badman"
+length = 0.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/path = NodePath("Texture:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Rect2( 3, 2104, 70, 130 ), Rect2( 77, 2098, 81, 105 ), Rect2( 165, 2100, 170, 118 ), Rect2( 342, 2101, 180, 114 ), Rect2( 534, 2097, 160, 96 ), Rect2( 698, 2097, 158, 80 ) ]
-}
-
-[sub_resource type="Animation" id=50]
-resource_name = "super"
-length = 0.7
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 2254, 82, 79 ), Rect2( 89, 2256, 70, 95 ), Rect2( 164, 2256, 78, 87 ), Rect2( 246, 2254, 94, 65 ), Rect2( 348, 2254, 145, 81 ), Rect2( 502, 2254, 164, 103 ), Rect2( 674, 2256, 246, 143 ) ]
+"values": [ ExtResource( 7 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
+tracks/1/path = NodePath("Texture:region_rect")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 406.667, 705.005 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AttackBox/Collision:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -3.09944e-05, -14.9998 ) ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.5, 0.6 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ 0.0 ],
-"method": "basic_attack"
-}, {
-"args": [ 0.0 ],
-"method": "basic_attack"
-} ]
+"update": 1,
+"values": [ Rect2( 11, 38, 77, 97 ), Rect2( 99, 38, 80, 97 ) ]
 }
 
-[sub_resource type="Animation" id=51]
-resource_name = "unased"
+[sub_resource type="Animation" id=64]
+resource_name = "Baejitul"
 length = 0.3
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/path = NodePath("Texture:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Rect2( 2, 913, 80, 89 ), Rect2( 86, 914, 78, 92 ), Rect2( 168, 914, 100, 85 ), Rect2( 272, 914, 87, 83 ) ]
+"values": [ ExtResource( 14 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 38, 75, 131 ), Rect2( 96, 39, 73, 130 ), Rect2( 179, 38, 71, 130 ) ]
 }
 
-[sub_resource type="Animation" id=52]
-resource_name = "walk"
+[sub_resource type="Animation" id=66]
+resource_name = "CTonaldo"
 length = 0.3
 loop = true
 tracks/0/type = "value"
@@ -1161,8 +146,449 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 6, 126, 53, 89 ), Rect2( 63, 126, 57, 90 ), Rect2( 124, 126, 59, 89 ) ]
+"values": [ Rect2( 11, 40, 84, 105 ), Rect2( 107, 40, 84, 104 ), Rect2( 203, 41, 84, 102 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 19 ) ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "CapAfrica"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 38, 90, 102 ), Rect2( 110, 39, 80, 101 ), Rect2( 200, 39, 90, 101 ) ]
+}
+
+[sub_resource type="Animation" id=55]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 3, 19, 78, 88 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Texture:texture:load_path")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "res://.import/CTonaldo.png-e8afc0bc0fce18e79700e05eedd8f09a.stex" ]
+}
+
+[sub_resource type="Animation" id=67]
+resource_name = "RyanMan"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 11, 40, 84, 105 ), Rect2( 100, 40, 80, 104 ), Rect2( 180, 40, 90, 104 ) ]
+}
+
+[sub_resource type="Animation" id=68]
+resource_name = "Sonogong"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 11, 40, 84, 105 ), Rect2( 107, 40, 84, 104 ), Rect2( 203, 41, 84, 102 ) ]
+}
+
+[sub_resource type="Animation" id=69]
+resource_name = "Sutoman"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 18 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 38, 71, 84 ), Rect2( 92, 39, 72, 83 ), Rect2( 175, 39, 71, 85 ) ]
+}
+
+[sub_resource type="Animation" id=58]
+resource_name = "Aren"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 27 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 3, 19, 78, 88 ), Rect2( 85, 19, 78, 85 ), Rect2( 167, 18, 79, 84 ) ]
+}
+
+[sub_resource type="Animation" id=60]
+resource_name = "Badman"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Rect2( 11, 38, 77, 97 ), Rect2( 99, 38, 80, 97 ) ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "Baejitul"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 38, 75, 131 ), Rect2( 96, 39, 73, 130 ), Rect2( 179, 38, 71, 130 ) ]
+}
+
+[sub_resource type="Animation" id=71]
+resource_name = "CTonaldo"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 19 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 38, 80, 112 ), Rect2( 100, 38, 90, 112 ), Rect2( 200, 38, 90, 112 ) ]
+}
+
+[sub_resource type="Animation" id=72]
+resource_name = "CapAfrica"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 38, 90, 102 ), Rect2( 110, 38, 80, 102 ), Rect2( 200, 38, 90, 102 ) ]
+}
+
+[sub_resource type="Animation" id=57]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 27 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 3, 19, 78, 88 ) ]
+}
+
+[sub_resource type="Animation" id=73]
+resource_name = "RyanMan"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 38, 80, 102 ), Rect2( 100, 38, 80, 102 ), Rect2( 180, 38, 90, 102 ) ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "Sonogong"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 38, 90, 112 ), Rect2( 110, 38, 90, 112 ), Rect2( 200, 38, 90, 112 ) ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "Sutoman"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 18 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 38, 75, 82 ), Rect2( 90, 38, 80, 82 ), Rect2( 170, 38, 80, 82 ) ]
+}
+
+[sub_resource type="DynamicFont" id=76]
+size = 30
+font_data = ExtResource( 20 )
+
+[sub_resource type="DynamicFont" id=79]
+size = 30
+font_data = ExtResource( 20 )
+
+[sub_resource type="DynamicFont" id=77]
+size = 25
+font_data = ExtResource( 20 )
+
+[sub_resource type="DynamicFont" id=78]
+size = 25
+font_data = ExtResource( 20 )
 
 [node name="SelectPerson" type="Control"]
 anchor_right = 1.0
@@ -1176,55 +602,126 @@ __meta__ = {
 margin_right = 1444.0
 margin_bottom = 895.0
 theme = SubResource( 54 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="ItemList" type="ItemList" parent="."]
-margin_left = 387.0
-margin_top = 192.0
-margin_right = 1013.0
-margin_bottom = 382.0
-custom_constants/hseparation = 5
-items = [ "", ExtResource( 4 ), false, "", ExtResource( 1 ), false, "", ExtResource( 3 ), false, "", ExtResource( 5 ), false, "", null, false, "", null, false, "", null, false, "", null, false, "", null, false, "", null, false ]
-allow_reselect = true
-max_text_lines = 2
-max_columns = 5
-same_column_width = true
-fixed_column_width = 90
-fixed_icon_size = Vector2( 80, 80 )
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 489.0
+margin_top = 345.0
+margin_right = 568.0
+margin_bottom = 462.0
+rect_scale = Vector2( 5.92, 3.44 )
+theme = SubResource( 62 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Aren" type="Button" parent="."]
+margin_left = 519.0
+margin_top = 453.0
+margin_right = 589.0
+margin_bottom = 514.0
+mouse_filter = 2
+theme = ExtResource( 13 )
+action_mode = 0
+icon = ExtResource( 4 )
+icon_align = 1
+expand_icon = true
+
+[node name="Badman" type="Button" parent="."]
+margin_left = 593.0
+margin_top = 456.0
+margin_right = 661.0
+margin_bottom = 516.0
+mouse_filter = 2
+theme = ExtResource( 13 )
+icon = ExtResource( 12 )
+icon_align = 1
+expand_icon = true
+
+[node name="Baejitul" type="Button" parent="."]
+margin_left = 667.0
+margin_top = 452.0
+margin_right = 735.0
+margin_bottom = 515.0
+mouse_filter = 2
+theme = ExtResource( 13 )
+icon = ExtResource( 1 )
+icon_align = 1
+expand_icon = true
+
+[node name="CapAfrica" type="Button" parent="."]
+margin_left = 741.0
+margin_top = 453.0
+margin_right = 809.0
+margin_bottom = 515.0
+mouse_filter = 2
+theme = ExtResource( 13 )
+icon = ExtResource( 9 )
+icon_align = 1
+expand_icon = true
+
+[node name="CTonaldo" type="Button" parent="."]
+margin_left = 813.0
+margin_top = 455.0
+margin_right = 882.0
+margin_bottom = 515.0
+mouse_filter = 2
+theme = ExtResource( 13 )
+icon = ExtResource( 3 )
+icon_align = 1
+expand_icon = true
+
+[node name="RyanMan" type="Button" parent="."]
+margin_left = 519.0
+margin_top = 517.0
+margin_right = 587.0
+margin_bottom = 581.0
+mouse_filter = 2
+theme = ExtResource( 13 )
+icon = ExtResource( 5 )
+icon_align = 1
+expand_icon = true
+
+[node name="Sonogong" type="Button" parent="."]
+margin_left = 593.0
+margin_top = 517.0
+margin_right = 661.0
+margin_bottom = 579.0
+mouse_filter = 2
+theme = ExtResource( 13 )
+icon = ExtResource( 10 )
+icon_align = 1
+expand_icon = true
+
+[node name="Sutoman" type="Button" parent="."]
+margin_left = 666.0
+margin_top = 519.0
+margin_right = 734.0
+margin_bottom = 579.0
+mouse_filter = 2
+theme = ExtResource( 13 )
+icon = ExtResource( 11 )
+icon_align = 1
+expand_icon = true
+
+[node name="BadMan8" type="Button" parent="."]
+visible = false
+margin_left = 736.0
+margin_top = 662.0
+margin_right = 804.0
+margin_bottom = 720.0
+icon = SubResource( 63 )
+icon_align = 1
+expand_icon = true
 
 [node name="Texture" type="Sprite" parent="."]
 position = Vector2( 201, 477 )
 scale = Vector2( 3, 3 )
 texture = SubResource( 1 )
 region_enabled = true
-region_rect = Rect2( 85, 19, 78, 85 )
-
-[node name="Animation" type="AnimationPlayer" parent="."]
-autoplay = "idle"
-anims/RESET = SubResource( 2 )
-anims/aerial-kick = SubResource( 3 )
-anims/backdash = SubResource( 4 )
-anims/basic-kick = SubResource( 5 )
-anims/block = SubResource( 6 )
-anims/damage = SubResource( 7 )
-anims/damage_full = SubResource( 8 )
-anims/damage_on_ar = SubResource( 9 )
-anims/dashing-kick = SubResource( 10 )
-anims/dashing-punch = SubResource( 11 )
-anims/fall = SubResource( 12 )
-anims/hurt = SubResource( 13 )
-anims/idle = SubResource( 14 )
-anims/in_floor = SubResource( 15 )
-anims/jump = SubResource( 16 )
-anims/jumpPunch = SubResource( 17 )
-anims/punch = SubResource( 18 )
-anims/roll = SubResource( 19 )
-anims/run = SubResource( 20 )
-anims/special1 = SubResource( 21 )
-anims/special2 = SubResource( 22 )
-anims/special3 = SubResource( 23 )
-anims/super = SubResource( 24 )
-anims/unased = SubResource( 25 )
-anims/walk = SubResource( 26 )
+region_rect = Rect2( 3, 19, 78, 88 )
 
 [node name="Texture2" type="Sprite" parent="."]
 position = Vector2( 1199, 482 )
@@ -1234,32 +731,89 @@ flip_h = true
 region_enabled = true
 region_rect = Rect2( 3, 19, 78, 88 )
 
-[node name="Animation2" type="AnimationPlayer" parent="."]
-autoplay = "idle"
-anims/RESET = SubResource( 28 )
-anims/aerial-kick = SubResource( 29 )
-anims/backdash = SubResource( 30 )
-anims/basic-kick = SubResource( 31 )
-anims/block = SubResource( 32 )
-anims/damage = SubResource( 33 )
-anims/damage_full = SubResource( 34 )
-anims/damage_on_ar = SubResource( 35 )
-anims/dashing-kick = SubResource( 36 )
-anims/dashing-punch = SubResource( 37 )
-anims/fall = SubResource( 38 )
-anims/hurt = SubResource( 39 )
-anims/idle = SubResource( 40 )
-anims/in_floor = SubResource( 41 )
-anims/jump = SubResource( 42 )
-anims/jumpPunch = SubResource( 43 )
-anims/punch = SubResource( 44 )
-anims/roll = SubResource( 45 )
-anims/run = SubResource( 46 )
-anims/special1 = SubResource( 47 )
-anims/special2 = SubResource( 48 )
-anims/special3 = SubResource( 49 )
-anims/super = SubResource( 50 )
-anims/unased = SubResource( 51 )
-anims/walk = SubResource( 52 )
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "RyanMan"
+anims/Aren = SubResource( 56 )
+anims/Badman = SubResource( 59 )
+anims/Baejitul = SubResource( 64 )
+anims/CTonaldo = SubResource( 66 )
+anims/CapAfrica = SubResource( 65 )
+anims/RESET = SubResource( 55 )
+anims/RyanMan = SubResource( 67 )
+anims/Sonogong = SubResource( 68 )
+anims/Sutoman = SubResource( 69 )
 
-[connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]
+[node name="Animation2" type="AnimationPlayer" parent="."]
+autoplay = "RyanMan"
+anims/Aren = SubResource( 58 )
+anims/Badman = SubResource( 60 )
+anims/Baejitul = SubResource( 70 )
+anims/CTonaldo = SubResource( 71 )
+anims/CapAfrica = SubResource( 72 )
+anims/RESET = SubResource( 57 )
+anims/RyanMan = SubResource( 73 )
+anims/Sonogong = SubResource( 74 )
+anims/Sutoman = SubResource( 75 )
+
+[node name="Jogar" type="Button" parent="."]
+margin_left = 541.0
+margin_top = 649.0
+margin_right = 861.0
+margin_bottom = 697.0
+text = "JOGAR"
+
+[node name="ControlLabel" type="Label" parent="."]
+margin_left = 529.0
+margin_top = 64.0
+margin_right = 851.0
+margin_bottom = 119.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 76 )
+text = "CONTROLES"
+align = 1
+valign = 1
+
+[node name="ErroLabel" type="Label" parent="."]
+visible = false
+margin_left = 530.0
+margin_top = 359.0
+margin_right = 852.0
+margin_bottom = 414.0
+custom_colors/font_color = Color( 0.768627, 0.141176, 0.141176, 1 )
+custom_fonts/font = SubResource( 79 )
+text = "SELECIONE DOIS LUTADORES PARA
+INICIAR A LUTA"
+align = 1
+valign = 1
+
+[node name="ControlP1" type="Label" parent="."]
+margin_left = 78.0
+margin_top = 135.0
+margin_right = 305.0
+margin_bottom = 272.0
+custom_fonts/font = SubResource( 77 )
+text = "Jogador 1
+
+A - Esquerda
+D - Direita
+F - Seleciona
+Q - Escolhe Novamente"
+align = 1
+valign = 1
+
+[node name="ControlP2" type="Label" parent="."]
+margin_left = 999.0
+margin_top = 104.0
+margin_right = 1368.0
+margin_bottom = 282.0
+custom_fonts/font = SubResource( 78 )
+text = "Jogador 2
+
+Seta Esquerda - Esquerda
+Seta Direita - Direita
+Page Up - Seleciona
+Page Down - Escolhe Novamente"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Jogar" to="." method="_on_Jogar_pressed"]

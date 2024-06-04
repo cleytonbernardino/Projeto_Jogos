@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/images/ALL.png" type="Texture" id=1]
 [ext_resource path="res://scenes/menu/healthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/menu/R_healthBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/menu/cenarios.gd" type="Script" id=4]
+[ext_resource path="res://assets/fonts/BROMPH_TOWN.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 718.641, 49 )
@@ -17,8 +18,13 @@ extents = Vector2( 346.5, 2.99902 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 718.75, 214.125 )
 
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 5 )
+
 [node name="Arena" type="Node2D"]
 script = ExtResource( 4 )
+minunt = 10
 
 [node name="Texture" type="Sprite" parent="."]
 position = Vector2( 717.499, 449.75 )
@@ -26,6 +32,7 @@ scale = Vector2( 1.79676, 2.36257 )
 texture = ExtResource( 1 )
 hframes = 3
 vframes = 7
+frame = 19
 __meta__ = {
 "_edit_lock_": true
 }
@@ -37,7 +44,7 @@ __meta__ = {
 }
 
 [node name="CollisionFloor" type="CollisionShape2D" parent="MapLimits"]
-position = Vector2( 715, 814 )
+position = Vector2( 719, 786 )
 shape = SubResource( 1 )
 
 [node name="CollisionRight" type="CollisionShape2D" parent="MapLimits"]
@@ -68,7 +75,7 @@ margin_left = 627.0
 margin_top = 325.0
 margin_right = 831.0
 margin_bottom = 345.0
-text = "NEXT MAP"
+text = "Seleção de Personagem"
 
 [node name="MapLimit" type="Area2D" parent="."]
 monitorable = false
@@ -105,7 +112,25 @@ rect_scale = Vector2( 1.2, 1.2 )
 wait_time = 1.2
 one_shot = true
 
+[node name="FigthTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 651.0
+margin_top = 68.0
+margin_right = 836.0
+margin_bottom = 124.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "2:00"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 [connection signal="body_entered" from="MapLimit" to="." method="on_MapLimit_body_entered"]
 [connection signal="timeout" from="WinDelay" to="." method="_on_WinDelay_timeout"]
+[connection signal="timeout" from="FigthTimer" to="." method="_on_FigthTimer_timeout"]

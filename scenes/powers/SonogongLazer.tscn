@@ -1,0 +1,266 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/powers/projectile.gd" type="Script" id=1]
+[ext_resource path="res://assets/fights/spriteSheets/Sonogong.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23.6667, 6.33333 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 332, 1816, 68, 62 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Collision:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 23.6667, 6.33333 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Collision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 11, -1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Rect2( 332, 1816, 68, 62 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle2" ],
+"method": "change_animation"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Collision:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 23.6667, 6.33333 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Collision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 11, -1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle2"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Rect2( 447, 1824, 76, 72 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Collision:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 44.3333, 40 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Collision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1.33333, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "kame"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Rect2( 730, 2102, 134, 58 ), Rect2( 882, 2103, 112, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Collision:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.33334, -0.666667 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Collision:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 67.3333, 29.3333 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "kame_ini"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Rect2( 635, 2106, 68, 62 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "kame" ],
+"method": "change_animation"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Collision:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 23.6667, 6.33333 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Collision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 11, -1 ) ]
+}
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
+
+[node name="Texture" type="Sprite" parent="."]
+position = Vector2( 0.666667, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 332, 1816, 68, 62 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 11, -1 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+visible = false
+position = Vector2( 1, 1.66893e-06 )
+scale = Vector2( 3.70667, 3.75 )
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/RESET = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/idle2 = SubResource( 4 )
+anims/kame = SubResource( 5 )
+anims/kame_ini = SubResource( 6 )
+
+[connection signal="body_entered" from="." to="." method="on_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="on_screen_exited"]

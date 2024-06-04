@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baejitulSelect.png-26d73e65da5079228ee4eb804df6b9f7.stex"
+path="res://.import/sonogongSelect.png-2ab967058379b6aa55e5b635f6cab3b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fights/icon/baejitulSelect.png"
-dest_files=[ "res://.import/baejitulSelect.png-26d73e65da5079228ee4eb804df6b9f7.stex" ]
+source_file="res://assets/fights/icon/sonogongSelect.png"
+dest_files=[ "res://.import/sonogongSelect.png-2ab967058379b6aa55e5b635f6cab3b9.stex" ]
 
 [params]
 

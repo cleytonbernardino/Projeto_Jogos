@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baejitulSelect.png-26d73e65da5079228ee4eb804df6b9f7.stex"
+path="res://.import/badmanSelect.png-63b1f22dd1e614d905c520223e99f717.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fights/icon/baejitulSelect.png"
-dest_files=[ "res://.import/baejitulSelect.png-26d73e65da5079228ee4eb804df6b9f7.stex" ]
+source_file="res://assets/fights/icon/badmanSelect.png"
+dest_files=[ "res://.import/badmanSelect.png-63b1f22dd1e614d905c520223e99f717.stex" ]
 
 [params]
 

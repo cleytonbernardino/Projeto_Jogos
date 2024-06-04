@@ -1,15 +1,16 @@
 extends Node
 
-var playerOneDir: String = "res://scenes/fights/RyanMan.tscn"
-var playerTwoDir: String = "res://scenes/fights/Baejitul.tscn"
+var playerOneDir: String
+var playerTwoDir: String
 var wins: Array = [0, 0] # 0 - Player One | 1 - Player Two
 
 var attack_damage: Dictionary = {
 	"punch": 20,
 	"runKick": 20,
+	"special2": 40,
 	"special3": 20,
 	"special4": 20, # TEMPORARIO
-	"super": 40
+	"super": 50
 }
 
 var special_cust: Dictionary = {
@@ -23,6 +24,17 @@ var special_cust: Dictionary = {
 	"special4": -60,
 	"super": -100,
 }
+
+var fights: Array =  [
+	"res://scenes/fights/Aren.tscn",
+	"res://scenes/fights/Badman.tscn",
+	"res://scenes/fights/Baejitul.tscn",
+	"res://scenes/fights/CapAfrica.tscn",
+	"res://scenes/fights/CTonaldo.tscn",
+	"res://scenes/fights/RyanMan.tscn",
+	"res://scenes/fights/Sonogong.tscn",
+	"res://scenes/fights/Sutoman.tscn",
+]
 
 func instance_node(node, location, parent):
 	var node_instace = node.instance()

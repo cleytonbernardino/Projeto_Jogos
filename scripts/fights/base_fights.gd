@@ -77,7 +77,7 @@ func _ready() -> void:
 		}
 	combo_keys = {
 		'runKick': [keys['baixo'], keys['punch']],
-		'super': [keys['punch'], keys['punch'], keys['esquerda']],
+		'super': [keys['esquerda'], keys['punch']],
 		'jumpKick': [keys['direita'], keys['cima'], keys['esquerda']],
 		'special1': [keys['direita'], keys['esquerda']],
 		'special2': [keys['direita'], keys['punch']],
@@ -209,7 +209,8 @@ func jump(_delta: float) -> void:
 func take_damage(damage: int) -> void:
 	healt -= damage
 	healtBar.damage(damage)
-	special = "damage_on_ar" if velocity.y < 0 else "damage"
+	print(velocity.y)
+	special = "damage"
 
 	$DamageCooldown.start()
 
@@ -217,7 +218,12 @@ func take_damage(damage: int) -> void:
 	global_position.y += -50
 	global_position.x += 10 if sprite.flip_h else -10
 
-	if special == "damage_on_ar":
+	if velocity.y < 100:
+		hit_count = 0
+		special = "damage_on_ar"
+		moviment = false
+
+	elif special == "damage_on_ar":
 		hit_count = 0
 		special = "in_floor"
 		moviment = false
@@ -290,10 +296,12 @@ func atack_move() -> void:
 	if special == "runKick":
 		moviment_animation(200, 0.3)
 		return
+	elif special == "special2":
+		moviment_animation(300, 0.3)
+		return
 	moviment_animation(400, 0.6, 0.4)
 
 func projectile() -> void:
-	print(self.name)
 	var obj = lazer.instance()
 	get_parent().add_child(obj)
 	
@@ -301,6 +309,10 @@ func projectile() -> void:
 	obj.damage = projectile_damage
 	obj.direction = direction
 	obj.rotate(direction)
+	if special == 'special3':
+		obj.change_animation('kame_ini')
+		obj.damage = Global.attack_damage.get('kame_damage', 20)
+	
 	obj.global_position = point.global_position
 
 
@@ -345,8 +357,8 @@ func on_HitBox_area_entered(area:Area2D) -> void:
 	if special == 'jumpPunch':
 		basic_attack(30)
 		on_animation_finished(special)
-	elif special == "runKick":
-		basic_attack(20)
+	elif special == "runKick" or special == "special2":
+		basic_attack(Global.attack_damage.get(special, 20))
 		impact()
 		on_animation_finished(special)
 
