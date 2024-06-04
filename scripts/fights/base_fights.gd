@@ -48,7 +48,7 @@ export(int) var move_speed = 20
 export(float) var jump_strength = -1.3
 export(float) var gravity = 1.0
 
-export(int) var healt = 100
+export(int) var healt = 1000
 export(int) var mana = 0
 export(int) var projectile_damage = 30
 

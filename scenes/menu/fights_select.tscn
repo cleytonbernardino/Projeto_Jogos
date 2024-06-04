@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://assets/fights/icon/baejitulSelect.png" type="Texture" id=1]
 [ext_resource path="res://scripts/menu/fights_select.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/fights/spriteSheets/Sutaman.png" type="Texture" id=18]
 [ext_resource path="res://assets/fights/spriteSheets/CTonaldo.png" type="Texture" id=19]
 [ext_resource path="res://assets/fonts/BROMPH_TOWN.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://assets/fights/spriteSheets/Aren.png" type="Texture" id=21]
 
 [sub_resource type="StyleBoxTexture" id=53]
 texture = ExtResource( 6 )
@@ -36,7 +37,6 @@ region_rect = Rect2( 0, 0, 95, 95 )
 Panel/styles/panel = SubResource( 61 )
 
 [sub_resource type="StreamTexture" id=63]
-flags = 4
 load_path = "res://.import/badmanSelect.png-63b1f22dd1e614d905c520223e99f717.stex"
 
 [sub_resource type="StreamTexture" id=1]
@@ -71,7 +71,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ SubResource( 1 ) ]
+"values": [ ExtResource( 21 ) ]
 }
 
 [sub_resource type="Animation" id=59]
@@ -811,8 +811,8 @@ text = "Jogador 2
 
 Seta Esquerda - Esquerda
 Seta Direita - Direita
-Page Up - Seleciona
-Page Down - Escolhe Novamente"
+Page Down - Seleciona
+Page UP - Escolhe Novamente"
 align = 1
 valign = 1
 

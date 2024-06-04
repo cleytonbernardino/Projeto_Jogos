@@ -3,20 +3,24 @@ onready var sprite: Sprite = $Texture
 onready var delay: Timer = $WinDelay
 onready var FigthTimer: Timer = $FigthTimer
 onready var timeDisplay: Label = $TimeLabel
+onready var label_text: Label = $TextPlaceholder
 
-export(int) var minunt = 2
-export(int) var secund = 0
+export(int) var minutes = 2
+export(int) var seconds = 0
 
 var playerOne: KinematicBody2D
 var playerTwo: KinematicBody2D
 
 var wait: bool = false
+export(float) var win_delay_time: float = 1.5
 
 func _ready() -> void:
 	randomize()
 	sprite.frame = randi() % 21;
 	
-	timeDisplay.text = "%02d:%02d" % [minunt, secund]
+	timeDisplay.text = "%02d:%02d" % [minutes, seconds]
+	
+	delay.wait_time = win_delay_time
 	
 	playerOne = load(Global.playerOneDir).instance()
 	playerTwo = load(Global.playerTwoDir).instance()
@@ -44,6 +48,7 @@ func _process(_delta: float) -> void:
 		print(Global.wins)
 		Global.wins[1] += 1
 		$HealthBar2.add_win()
+		chance_text("vitoria do jogador 2")
 		playerTwo.special = "idle"
 		delay.start()
 		return
@@ -51,6 +56,7 @@ func _process(_delta: float) -> void:
 		wait = true
 		Global.wins[0] += 1
 		$HealthBar.add_win()
+		chance_text("vitoria do jogador 1")
 		playerOne.special = "idle"
 		delay.start()
 		return
@@ -69,6 +75,7 @@ func update_time() -> void:
 	
 	if seg == 0 and mi == 0 and !wait:
 		wait = true
+		chance_text("empate")
 		delay.start()
 		return
 	
@@ -79,6 +86,10 @@ func update_time() -> void:
 		seg -= 1
 	timeDisplay.text = "%02d:%02d" % [mi, seg]
 	
+
+func chance_text(text: String) -> void:
+	label_text.visible = true
+	label_text.text = text
 
 func _on_Button_pressed():
 	Global.wins = [0, 0]
@@ -95,8 +106,11 @@ func on_MapLimit_body_entered(body: KinematicBody2D) -> void:
 	body.global_position = $Player2.global_position
 
 func _on_WinDelay_timeout() -> void:
-	if Global.wins[0] == 2 or Global.wins[1] == 2:
-		print("FIM DA BATALHA")
+	if Global.wins[0] == 2:
+		chance_text("vitoria do jogador 1")
+		return
+	elif Global.wins[1] == 2:
+		chance_text("vitoria do jogador 2")
 		return
 	get_tree().reload_current_scene()
 

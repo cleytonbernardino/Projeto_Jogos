@@ -6,11 +6,10 @@ var wins: Array = [0, 0] # 0 - Player One | 1 - Player Two
 
 var attack_damage: Dictionary = {
 	"punch": 20,
-	"runKick": 20,
-	"special2": 40,
-	"special3": 20,
-	"special4": 20, # TEMPORARIO
-	"super": 50
+	"runKick": 30,
+	"special2": 100,
+	"special3": 110,
+	"super": 150
 }
 
 var special_cust: Dictionary = {

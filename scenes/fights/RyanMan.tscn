@@ -68,7 +68,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=32]
 resource_name = "backdash"
-length = 0.1
+length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1

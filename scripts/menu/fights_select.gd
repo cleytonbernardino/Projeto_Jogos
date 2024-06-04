@@ -27,6 +27,8 @@ onready var p2: Button = get_node(button_order[current[1]])
 func _ready() -> void:
 	p1.theme = select_themeP1
 	p2.theme = select_themeP2
+	Global.playerOneDir = "res://scenes/fights/Aren.tscn"
+	Global.playerTwoDir = "res://scenes/fights/RyanMan.tscn"
 
 func _physics_process(_delta: float) -> void:
 	if current[0] == current[1]:
@@ -74,6 +76,9 @@ func _input(event):
 
 	if event.is_action_pressed("ui_block"):
 		Global.playerTwoDir = ""
+
+	if event.is_action_pressed("ui_accept"):
+		_on_Jogar_pressed()
 
 func _on_Jogar_pressed() -> void:
 	if Global.playerOneDir != "" and Global.playerTwoDir != "":

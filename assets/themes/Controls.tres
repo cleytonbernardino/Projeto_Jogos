@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/BROMPH_TOWN.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0431373, 0.0392157, 0.0392157, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+
+[resource]
+default_font = SubResource( 2 )
+TextEdit/colors/font_color_readonly = Color( 1, 1, 1, 1 )
+TextEdit/fonts/font = SubResource( 1 )
+TextEdit/styles/read_only = SubResource( 3 )
