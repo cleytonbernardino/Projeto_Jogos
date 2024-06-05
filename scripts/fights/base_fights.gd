@@ -10,6 +10,7 @@ class_name BaseFights
 onready var sprite: Sprite = $Texture
 onready var animation: AnimationPlayer = $Animation
 onready var time: Timer = $ComboTime
+onready var block_time: Timer = $BlockMaxTime
 onready var damage_collision: CollisionShape2D = $AttackBox.get_child(0)
 onready var point: Position2D = $Point
 
@@ -42,6 +43,7 @@ var player_ref = null
 var block: bool = false
 var death: bool = false
 var lazer: Object
+var time_block: float = 2.5
 
 # EXPORTs
 export(int) var move_speed = 25
@@ -61,6 +63,7 @@ var tween: Tween = Tween.new()
 var healtBar: Control
 
 func _ready() -> void:
+	block_time.wait_time = time_block
 	var name: String = self.name
 	if "@" in name:
 		name = self.name.split("@")[1]
@@ -77,11 +80,11 @@ func _ready() -> void:
 		}
 	combo_keys = {
 		'runKick': [keys['baixo'], keys['punch']],
-		'super': [keys['esquerda'], keys['punch']],
 		'jumpKick': [keys['direita'], keys['cima'], keys['esquerda']],
 		'special1': [keys['direita'], keys['esquerda']],
-		'special2': [keys['direita'], keys['punch']],
-		'special3': [keys['baixo'], keys['baixo']]
+		'special2': [keys['block'], keys['punch']],
+		'special3': [keys['baixo'], keys['baixo']],
+		'super': [keys['baixo'], keys['punch']],
 	}
 	
 	add_child(tween)
@@ -152,6 +155,7 @@ func _input(event: InputEvent) -> void:
 
 	elif event.is_action_pressed(keys["block"]):
 		block = true
+		block_time.start()
 		sequence.push_back(keys["block"])
 
 	elif event.is_action_pressed("ui_run"):
@@ -346,6 +350,13 @@ func on_DamageCooldown_timeout() -> void:
 	moviment = true
 	state = MOVE
 	special = ""
+
+func _on_BlockMaxTime_timeout() -> void:
+	Input.action_release(keys["block"])
+	special = ""
+	block = false
+	hitbox_status(true)
+	state = MOVE
 
 func on_HitBox_area_entered(area:Area2D) -> void:
 	var parent = area.get_parent()

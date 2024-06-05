@@ -357,7 +357,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 86.6667, 130.001 ) ]
+"values": [ Vector2( 86.6667, 213.335 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AttackBox/Collision:position")
@@ -369,7 +369,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 573.333, -10 ) ]
+"values": [ Vector2( 653, 0 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -741,8 +741,11 @@ one_shot = true
 [node name="DamageCooldown" type="Timer" parent="."]
 one_shot = true
 
+[node name="BlockMaxTime" type="Timer" parent="."]
+one_shot = true
+
 [node name="Point" type="Position2D" parent="."]
-position = Vector2( 64.6667, -12 )
+position = Vector2( 100.667, -0.666664 )
 
 [node name="AttackBox" type="Area2D" parent="."]
 scale = Vector2( 0.1, 0.1 )
@@ -756,7 +759,6 @@ scale = Vector2( 3, 0.999991 )
 shape = SubResource( 24 )
 
 [node name="HitBox" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 2
 monitoring = false
@@ -768,5 +770,6 @@ shape = SubResource( 25 )
 [connection signal="timeout" from="ComboTime" to="." method="on_ComboTime_timeout"]
 [connection signal="timeout" from="HitCount" to="." method="on_HitCount_timeout"]
 [connection signal="timeout" from="DamageCooldown" to="." method="on_DamageCooldown_timeout"]
+[connection signal="timeout" from="BlockMaxTime" to="." method="_on_BlockMaxTime_timeout"]
 [connection signal="area_entered" from="AttackBox" to="." method="on_HitBox_area_entered"]
 [connection signal="area_exited" from="AttackBox" to="." method="on_HitBox_area_exited"]

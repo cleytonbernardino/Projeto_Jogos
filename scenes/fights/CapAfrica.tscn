@@ -856,6 +856,9 @@ one_shot = true
 [node name="DamageCooldown" type="Timer" parent="."]
 one_shot = true
 
+[node name="BlockMaxTime" type="Timer" parent="."]
+one_shot = true
+
 [node name="Point" type="Position2D" parent="."]
 position = Vector2( 76.9231, -11.5385 )
 
@@ -884,5 +887,6 @@ shape = SubResource( 25 )
 [connection signal="timeout" from="ComboTime" to="." method="on_ComboTime_timeout"]
 [connection signal="timeout" from="HitCount" to="." method="on_HitCount_timeout"]
 [connection signal="timeout" from="DamageCooldown" to="." method="on_DamageCooldown_timeout"]
+[connection signal="timeout" from="BlockMaxTime" to="." method="_on_BlockMaxTime_timeout"]
 [connection signal="area_entered" from="AttackBox" to="." method="on_HitBox_area_entered"]
 [connection signal="area_exited" from="AttackBox" to="." method="on_HitBox_area_exited"]

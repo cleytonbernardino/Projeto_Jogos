@@ -132,9 +132,10 @@ text = "
 				
 				Seta para direita - Direita
 				
-				~ - Socar
+				-- NUM PAD --
+				4 - Socar
 				
-				] - Bloquear"
+				5 - Bloquear"
 readonly = true
 
 [node name="CombosText" type="TextEdit" parent="ControlsLayer"]
@@ -151,11 +152,11 @@ text = "																									Combos
 		
 		Direita Esquerda - Jogar Item
 		
-		Direita, Soco - Especial 1
+		Bloquear, Soco - Especial 1
 		
 		Rolar, Rolar - Especial 2
 		
-		Esquerda, soco - Super
+		Rolar, soco - Super
 		
 		Bloquear, (Esquerda ou Direita) - Dash para Tras"
 readonly = true

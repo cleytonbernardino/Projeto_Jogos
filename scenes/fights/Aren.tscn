@@ -739,6 +739,7 @@ region_enabled = true
 region_rect = Rect2( 85, 19, 78, 85 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.333332, -1 )
 shape = SubResource( 19 )
 
@@ -779,8 +780,11 @@ one_shot = true
 [node name="DamageCooldown" type="Timer" parent="."]
 one_shot = true
 
+[node name="BlockMaxTime" type="Timer" parent="."]
+one_shot = true
+
 [node name="Point" type="Position2D" parent="."]
-position = Vector2( 60, -8 )
+position = Vector2( 85.3333, -8 )
 
 [node name="AttackBox" type="Area2D" parent="."]
 scale = Vector2( 0.1, 0.1 )
@@ -807,5 +811,6 @@ shape = SubResource( 25 )
 [connection signal="timeout" from="ComboTime" to="." method="on_ComboTime_timeout"]
 [connection signal="timeout" from="HitCount" to="." method="on_HitCount_timeout"]
 [connection signal="timeout" from="DamageCooldown" to="." method="on_DamageCooldown_timeout"]
+[connection signal="timeout" from="BlockMaxTime" to="." method="_on_BlockMaxTime_timeout"]
 [connection signal="area_entered" from="AttackBox" to="." method="on_HitBox_area_entered"]
 [connection signal="area_exited" from="AttackBox" to="." method="on_HitBox_area_exited"]
