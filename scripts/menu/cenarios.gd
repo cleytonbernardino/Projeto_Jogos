@@ -14,6 +14,8 @@ var playerTwo: KinematicBody2D
 var wait: bool = false
 export(float) var win_delay_time: float = 1.5
 
+var ignore
+
 func _ready() -> void:
 	randomize()
 	sprite.frame = randi() % 21;
@@ -93,10 +95,10 @@ func chance_text(text: String) -> void:
 
 func _on_Button_pressed():
 	Global.wins = [0, 0]
-	get_tree().reload_current_scene()
+	ignore = get_tree().reload_current_scene()
 
 func _on_Button2_pressed():
-	get_tree().change_scene("res://scenes/menu/fights_select.tscn")
+	ignore = get_tree().change_scene("res://scenes/menu/fights_select.tscn")
 
 func on_MapLimit_body_entered(body: KinematicBody2D) -> void:
 	print(body.animation.current_animation)
@@ -108,11 +110,13 @@ func on_MapLimit_body_entered(body: KinematicBody2D) -> void:
 func _on_WinDelay_timeout() -> void:
 	if Global.wins[0] == 2:
 		chance_text("vitoria do jogador 1")
+		ignore = get_tree().change_scene("res://scenes/menu/fights_select.tscn")
 		return
 	elif Global.wins[1] == 2:
 		chance_text("vitoria do jogador 2")
+		ignore = get_tree().change_scene("res://scenes/menu/fights_select.tscn")
 		return
-	get_tree().reload_current_scene()
+	ignore = get_tree().reload_current_scene()
 
 
 func _on_FigthTimer_timeout():

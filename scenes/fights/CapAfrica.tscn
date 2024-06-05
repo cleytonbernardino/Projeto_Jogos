@@ -96,7 +96,6 @@ tracks/6/keys = {
 [sub_resource type="Animation" id=28]
 resource_name = "backdash"
 length = 0.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -284,7 +283,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=32]
 resource_name = "jump"
 length = 0.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -301,7 +299,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=33]
 resource_name = "jumpKick"
 length = 0.3
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -317,7 +314,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=34]
 resource_name = "jumpPunch"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -372,7 +368,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=35]
 resource_name = "kick"
 length = 0.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -533,7 +528,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=40]
 resource_name = "runPunch"
 length = 0.3
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -580,7 +574,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=43]
 resource_name = "special2"
 length = 0.3
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -817,8 +810,6 @@ scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 1 )
-healt = 1000
-mana = 1000
 
 [node name="Texture" type="Sprite" parent="."]
 texture = SubResource( 26 )
@@ -826,6 +817,7 @@ region_enabled = true
 region_rect = Rect2( 13, 39, 83, 97 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 anims/RESET = SubResource( 27 )
 anims/backdash = SubResource( 28 )
 anims/block = SubResource( 29 )

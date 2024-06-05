@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Not dead YET! (battle theme) chiptune remix.mp3-46e9e089bfd68ab28cce0a9673d23d1f.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Not dead YET! (battle theme) chiptune remix.mp3"
+dest_files=[ "res://.import/Not dead YET! (battle theme) chiptune remix.mp3-46e9e089bfd68ab28cce0a9673d23d1f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

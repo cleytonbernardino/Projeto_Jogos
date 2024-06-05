@@ -3,7 +3,7 @@ class_name Projectile
 
 onready var animation: AnimationPlayer = $Animation
 
-export(int) var move_speed = 720
+export(int) var move_speed = 1720
 export(int) var damage = 70
 
 var direction:int = 1

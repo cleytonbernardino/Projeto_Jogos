@@ -741,8 +741,9 @@ scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 19 )
-healt = 1000000
-mana = 999999
+move_speed = 30
+healt = 1400
+projectile_damage = 40
 
 [node name="Texture" type="Sprite" parent="."]
 texture = ExtResource( 1 )

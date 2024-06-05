@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/themes/PauseMenu.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/menu/PauseMenu.gd" type="Script" id=2]
@@ -17,6 +17,29 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxEmpty" id=5]
 
+[sub_resource type="Theme" id=6]
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 1, 1, 0, 1 )
+Button/colors/font_color_pressed = Color( 1, 0.585938, 0, 1 )
+Button/fonts/font = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
 script = ExtResource( 2 )
@@ -34,29 +57,36 @@ margin_top = -66.0
 margin_bottom = 66.0
 
 [node name="Continue_btn" type="Button" parent="MenuHolder"]
-margin_right = 1440.0
+margin_right = 1280.0
 margin_bottom = 30.0
 theme = ExtResource( 1 )
 text = "Continuar"
 
 [node name="SeeControls_btn" type="Button" parent="MenuHolder"]
 margin_top = 34.0
-margin_right = 1440.0
+margin_right = 1280.0
 margin_bottom = 64.0
 theme = ExtResource( 1 )
 text = "Ver Controles"
 
-[node name="Restart_btn" type="Button" parent="MenuHolder"]
+[node name="Selectd_btn" type="Button" parent="MenuHolder"]
 margin_top = 68.0
-margin_right = 1440.0
+margin_right = 1280.0
 margin_bottom = 98.0
+theme = SubResource( 6 )
+text = "Selecao de personagem"
+
+[node name="Restart_btn" type="Button" parent="MenuHolder"]
+margin_top = 102.0
+margin_right = 1280.0
+margin_bottom = 132.0
 theme = ExtResource( 1 )
 text = "Reiniciar"
 
 [node name="Quit_btn" type="Button" parent="MenuHolder"]
-margin_top = 102.0
-margin_right = 1440.0
-margin_bottom = 132.0
+margin_top = 136.0
+margin_right = 1280.0
+margin_bottom = 166.0
 theme = ExtResource( 1 )
 text = "Sair"
 
@@ -65,10 +95,11 @@ visible = false
 
 [node name="PlayerOneText" type="TextEdit" parent="ControlsLayer"]
 anchor_bottom = 1.0
-margin_right = 729.0
-margin_bottom = -449.0
+margin_right = 653.0
+margin_bottom = -340.0
 theme = ExtResource( 3 )
-text = "							Jogador 1
+text = "							
+							Jogador 1
 
 							W - Pular
 
@@ -80,17 +111,18 @@ text = "							Jogador 1
 
 							F - Socar
 
-							Q - Bloquear"
+							G - Bloquear"
 readonly = true
 
 [node name="PlayerTwoText" type="TextEdit" parent="ControlsLayer"]
 anchor_bottom = 1.0
-margin_left = 726.0
+margin_left = 650.0
 margin_top = 1.0
-margin_right = 1440.0
-margin_bottom = -446.0
+margin_right = 1283.0
+margin_bottom = -334.0
 theme = ExtResource( 3 )
-text = "						Jogador 2
+text = "						
+						Jogador 2
 
 				Seta para cima - Pular
 				
@@ -100,19 +132,19 @@ text = "						Jogador 2
 				
 				Seta para direita - Direita
 				
-				Page Down - Socar
+				~ - Socar
 				
-				Page Up - Bloquear"
+				] - Bloquear"
 readonly = true
 
 [node name="CombosText" type="TextEdit" parent="ControlsLayer"]
 anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = 450.0
-margin_right = 1441.0
+margin_left = -3.0
+margin_top = 370.0
+margin_right = 1282.0
 margin_bottom = 1.0
 theme = ExtResource( 3 )
-text = "																	Combos
+text = "																									Combos
 		Soco no ar - Dash
 		
 		Rolar, Soco - Rasteira
@@ -122,6 +154,8 @@ text = "																	Combos
 		Direita, Soco - Especial 1
 		
 		Rolar, Rolar - Especial 2
+		
+		Esquerda, soco - Super
 		
 		Bloquear, (Esquerda ou Direita) - Dash para Tras"
 readonly = true
@@ -135,15 +169,16 @@ custom_colors/font_color_focus = Color( 1, 1, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.544922, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
 text = "<> Voltar <>"
 
 [connection signal="pressed" from="MenuHolder/Continue_btn" to="." method="_on_Continue_btn_pressed"]
 [connection signal="pressed" from="MenuHolder/SeeControls_btn" to="." method="_on_SeeControls_btn_pressed"]
+[connection signal="pressed" from="MenuHolder/Selectd_btn" to="." method="_on_Selectd_btn_pressed"]
 [connection signal="pressed" from="MenuHolder/Restart_btn" to="." method="_on_Restart_btn_pressed"]
 [connection signal="pressed" from="MenuHolder/Quit_btn" to="." method="_on_Quit_btn_pressed"]
 [connection signal="pressed" from="ControlsLayer/Return_btn" to="." method="_on_Return_btn_pressed"]

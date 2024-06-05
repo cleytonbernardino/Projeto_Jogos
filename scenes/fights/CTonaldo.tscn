@@ -66,7 +66,31 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -15 ) ]
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Collision:shape:extents")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 31.5, 51.5 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Collision:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.5, -0.5 ) ]
 }
 
 [sub_resource type="Animation" id=27]
@@ -215,6 +239,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Collision:shape:extents")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 31.5, 51.5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Collision:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.5, -0.5 ) ]
+}
 
 [sub_resource type="Animation" id=47]
 resource_name = "in_floor"
@@ -336,7 +384,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=35]
 resource_name = "punch"
-length = 0.3
+length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -344,10 +392,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 10, 1092, 66, 105 ), Rect2( 86, 1091, 93, 105 ), Rect2( 190, 1091, 114, 106 ) ]
+"values": [ Rect2( 10, 1092, 66, 105 ), Rect2( 86, 1091, 93, 105 ), Rect2( 190, 1091, 114, 106 ), Rect2( 10, 1092, 66, 105 ), Rect2( 86, 1091, 93, 105 ), Rect2( 190, 1091, 114, 106 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -356,10 +404,13 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ 20.0 ],
+"args": [ 0.0 ],
+"method": "basic_attack"
+}, {
+"args": [ 0.0 ],
 "method": "basic_attack"
 } ]
 }
@@ -423,7 +474,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=38]
 resource_name = "runKick"
-length = 0.4
+length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -431,10 +482,60 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 11, 1508, 94, 105 ), Rect2( 116, 1507, 90, 111 ), Rect2( 216, 1508, 103, 88 ), Rect2( 329, 1508, 145, 69 ) ]
+"values": [ Rect2( 11, 1508, 94, 105 ), Rect2( 116, 1507, 90, 111 ), Rect2( 216, 1508, 103, 88 ), Rect2( 329, 1508, 145, 69 ), Rect2( 329, 1508, 145, 69 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AttackBox/Collision:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 508.333, -113.333 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AttackBox/Collision:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 112.778, 260.002 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Collision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.666667, -18.6667 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "atack_move"
+} ]
 }
 
 [sub_resource type="Animation" id=39]
@@ -629,23 +730,20 @@ tracks/0/keys = {
 extents = Vector2( 81.6667, 230.001 )
 
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 30, 48 )
+extents = Vector2( 30, 50.3333 )
 
 [node name="CTonaldo" type="KinematicBody2D"]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 2 )
-healt = 1000
 
 [node name="Texture" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-offset = Vector2( 0, -15 )
 region_enabled = true
 region_rect = Rect2( 11, 40, 84, 105 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 2.5, -0.5 )
 shape = SubResource( 19 )
 
@@ -700,12 +798,14 @@ scale = Vector2( 3, 0.999992 )
 shape = SubResource( 24 )
 
 [node name="HitBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 input_pickable = false
 monitoring = false
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( 0, 2.33333 )
 shape = SubResource( 25 )
 
 [connection signal="animation_finished" from="Animation" to="." method="on_animation_finished"]

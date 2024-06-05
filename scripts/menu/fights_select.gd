@@ -20,6 +20,7 @@ var button_order: Dictionary = {
 }
 
 var current: Array = [0, 4]
+var ignore
 
 onready var p1: Button = get_node(button_order[current[0]])
 onready var p2: Button = get_node(button_order[current[1]])
@@ -27,8 +28,6 @@ onready var p2: Button = get_node(button_order[current[1]])
 func _ready() -> void:
 	p1.theme = select_themeP1
 	p2.theme = select_themeP2
-	Global.playerOneDir = "res://scenes/fights/Aren.tscn"
-	Global.playerTwoDir = "res://scenes/fights/RyanMan.tscn"
 
 func _physics_process(_delta: float) -> void:
 	if current[0] == current[1]:
@@ -53,6 +52,10 @@ func _input(event):
 			p1 = get_node(button_order[current[0]])
 			p1.theme = select_themeP1
 		elif event.is_action_pressed("punch"):
+			if Global.playerTwoDir == Global.fights[current[0]]:
+				$ErroSamePlayer.visible = true
+				$Notification_time.start()
+				return
 			Global.playerOneDir = Global.fights[current[0]]
 		r_Animation.play(button_order[current[0]])
 
@@ -68,6 +71,10 @@ func _input(event):
 			p2 = get_node(button_order[current[1]])
 			p2.theme = select_themeP2
 		elif event.is_action_pressed("ui_punch"):
+			if Global.playerOneDir == Global.fights[current[1]]:
+				$ErroSamePlayer.visible = true
+				$Notification_time.start()
+				return
 			Global.playerTwoDir = Global.fights[current[1]]
 		l_Animation.play(button_order[current[1]])
 
@@ -82,6 +89,10 @@ func _input(event):
 
 func _on_Jogar_pressed() -> void:
 	if Global.playerOneDir != "" and Global.playerTwoDir != "":
-		get_tree().change_scene("res://scenes/arena/cenarios.tscn")
+		ignore = get_tree().change_scene("res://scenes/arena/cenarios.tscn")
 	else:
 		$ErroLabel.visible = true
+
+func _on_Notification_time_timeout():
+	$ErroLabel.visible = false
+	$ErroSamePlayer.visible = false

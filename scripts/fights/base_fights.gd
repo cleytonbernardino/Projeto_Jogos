@@ -44,7 +44,7 @@ var death: bool = false
 var lazer: Object
 
 # EXPORTs
-export(int) var move_speed = 20
+export(int) var move_speed = 25
 export(float) var jump_strength = -1.3
 export(float) var gravity = 1.0
 
@@ -147,7 +147,7 @@ func _input(event: InputEvent) -> void:
 		sequence.push_back(keys["baixo"])
 		
 	elif event.is_action_pressed(keys["punch"]):
-		special = 'punch' if position.y > 600 else 'jumpPunch'
+		special = 'punch' if position.y > 400 else 'jumpPunch'
 		sequence.push_back(keys["punch"])
 
 	elif event.is_action_pressed(keys["block"]):
@@ -209,7 +209,6 @@ func jump(_delta: float) -> void:
 func take_damage(damage: int) -> void:
 	healt -= damage
 	healtBar.damage(damage)
-	print(velocity.y)
 	special = "damage"
 
 	$DamageCooldown.start()
@@ -217,8 +216,8 @@ func take_damage(damage: int) -> void:
 	hit_count += 1
 	global_position.y += -50
 	global_position.x += 10 if sprite.flip_h else -10
-
-	if velocity.y < 100:
+		
+	if velocity.y < 0:
 		hit_count = 0
 		special = "damage_on_ar"
 		moviment = false
@@ -305,7 +304,7 @@ func projectile() -> void:
 	var obj = lazer.instance()
 	get_parent().add_child(obj)
 	
-	var direction: int = 1 if sprite.flip_h == false else -1
+	direction = 1 if sprite.flip_h == false else -1
 	obj.damage = projectile_damage
 	obj.direction = direction
 	obj.rotate(direction)
