@@ -8,7 +8,6 @@
 [ext_resource path="res://scenes/menu/PauseMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/music/Not dead YET! (battle theme) chiptune remix.mp3" type="AudioStream" id=7]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 718.641, 49 )
 
@@ -64,10 +63,10 @@ rotation = -1.5708
 shape = SubResource( 3 )
 
 [node name="Player1" type="Position2D" parent="."]
-position = Vector2( 633, 543 )
+position = Vector2( 108, 388 )
 
 [node name="Player2" type="Position2D" parent="."]
-position = Vector2( 757, 539 )
+position = Vector2( 1171, 383 )
 
 [node name="MapLimit" type="Area2D" parent="."]
 monitorable = false
@@ -75,16 +74,6 @@ monitorable = false
 [node name="Collison" type="CollisionShape2D" parent="MapLimit"]
 position = Vector2( 586, 791 )
 shape = SubResource( 5 )
-
-[node name="CollisionRight" type="CollisionShape2D" parent="MapLimit"]
-position = Vector2( 1282.31, 334 )
-rotation = -1.5708
-shape = SubResource( 2 )
-
-[node name="CollisionLeft" type="CollisionShape2D" parent="MapLimit"]
-position = Vector2( -10.5005, 362.75 )
-rotation = -1.5708
-shape = SubResource( 3 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 2 )]
 margin_left = 171.0

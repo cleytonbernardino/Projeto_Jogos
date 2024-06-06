@@ -6,21 +6,21 @@ var wins: Array = [0, 0] # 0 - Player One | 1 - Player Two
 
 var attack_damage: Dictionary = {
 	"punch": 20,
-	"runKick": 30,
-	"special2": 100,
-	"special3": 110,
-	"super": 150
+	"runKick": 35,
+	"projectile": 70,
+	"kame_damage": 180,
+	"special2": 80,
+	"special3": 70,
+	"super": 200
 }
 
 var special_cust: Dictionary = {
-	"jumpKick": 15,
-	"jumpPunch": 15,
-	"kick": 10,
-	"punch": 10,
-	"special1": -20,
-	"special2": -30,
-	"special3": -50,
-	"special4": -60,
+	"jumpPunch": 10,
+	"runkick": 10,
+	"punch": 5,
+	"special1": -35,
+	"special2": -45,
+	"special3": -60,
 	"super": -100,
 }
 

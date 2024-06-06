@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/capAfrica.png-ab967bed23a6ddd08f7a107437df1245.stex"
+path="res://.import/capafrica.png-aefce36c85ff05194a601be1183fa246.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fights/icon/capAfrica.png"
-dest_files=[ "res://.import/capAfrica.png-ab967bed23a6ddd08f7a107437df1245.stex" ]
+source_file="res://assets/fights/icon/capafrica.png"
+dest_files=[ "res://.import/capafrica.png-aefce36c85ff05194a601be1183fa246.stex" ]
 
 [params]
 

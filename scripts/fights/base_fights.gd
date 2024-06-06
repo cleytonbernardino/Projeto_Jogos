@@ -1,11 +1,6 @@
 extends KinematicBody2D
 class_name BaseFights
 
-# NÃO ESQUECER DE REMOVER OS PRINTS DE DEBUG !!!
-# NÃO ESQUECER DE BALACEAR OS PERSONAGENS !!!
-# NÃO ESQUECER DE REVISAR AS FUNÇÃO !!! -- IMPORTANTE mesmo que seja CHATO
-# REMOVER A FUNÇÃO DE CORRER SE NÃO USAR
-
 # NOS
 onready var sprite: Sprite = $Texture
 onready var animation: AnimationPlayer = $Animation
@@ -35,8 +30,8 @@ var hit_count: int = 0
 var sequence: Array
 var special: String = ''
 
-# Varivel de descarte, apenas para a godot não reclamar
-var trash = null
+# Discard variable, just so godot doesn't complain
+var ignore = null
 
 # Attack
 var player_ref = null
@@ -45,14 +40,14 @@ var death: bool = false
 var lazer: Object
 var time_block: float = 2.5
 
-# EXPORTs
-export(int) var move_speed = 25
+# EXPORTS
+export(int) var move_speed = 30
 export(float) var jump_strength = -1.3
 export(float) var gravity = 1.0
 
 export(int) var healt = 1000
+export(int) var max_mana = 100
 export(int) var mana = 0
-export(int) var projectile_damage = 30
 
 # COMBOS AND MOVIMENTOS
 enum{MOVE, JUMP, ROLL, STOP}
@@ -84,18 +79,19 @@ func _ready() -> void:
 		'special1': [keys['direita'], keys['esquerda']],
 		'special2': [keys['block'], keys['punch']],
 		'special3': [keys['baixo'], keys['baixo']],
-		'super': [keys['baixo'], keys['punch']],
+		'super': [keys['punch'], keys['baixo']],
 	}
 	
+	healtBar.set_health(healt)
+	healtBar.define_max_mana(max_mana)
+	healtBar.set_mana(mana)
 	add_child(tween)
-	healtBar.DEBUG_set_max_heath(healt)
-	healtBar.DEBUG_set_max_mana(mana)
 
 func _process(delta: float) -> void:
 	# Veficar se o personagem está morto e trava a sua animação para que ele fique no chão
 	if death:
 		animation.play("in_floor")
-		trash = move_and_slide(Vector2(0, 200))
+		ignore = move_and_slide(Vector2(0, 200))
 		change_collision()
 		return
 
@@ -126,9 +122,6 @@ func _process(delta: float) -> void:
 	set_animation()
 
 func _input(event: InputEvent) -> void:	
-	if event.is_action_released("ui_run"):
-		is_run = false
-
 	if event.is_action_released(keys["block"]):
 		special = ''
 		block = false
@@ -157,9 +150,6 @@ func _input(event: InputEvent) -> void:
 		block = true
 		block_time.start()
 		sequence.push_back(keys["block"])
-
-	elif event.is_action_pressed("ui_run"):
-		is_run = true
 
 	elif Input.is_action_just_pressed(keys["cima"]) and is_on_floor():
 		sequence.push_back(keys["cima"])
@@ -199,8 +189,10 @@ func move(delta: float, run: bool = false) -> void:
 	if run:
 		speed *= 2
 	elif block and Input.is_action_just_pressed(backdash_direction):
+		if (self.global_position.x + 200) >= 1400 or (self.global_position.x - 200) <= 0:
+			return
 		special = 'backdash'
-		moviment_animation(200, 0.3, 0.0, true)
+		animate_repulsion_movement(200, 0.3, 0.0, true)
 	velocity.x = direction * speed * delta
 
 func apply_gravity(delta: float) -> void:
@@ -219,7 +211,8 @@ func take_damage(damage: int) -> void:
 
 	hit_count += 1
 	global_position.y += -50
-	global_position.x += 10 if sprite.flip_h else -10
+	if (self.global_position.x + 10) < 1380 or (self.global_position.x - 10) > 10:
+		global_position.x += 10 if sprite.flip_h else -10
 		
 	if velocity.y < 0:
 		hit_count = 0
@@ -234,8 +227,10 @@ func take_damage(damage: int) -> void:
 	elif hit_count > 3:
 		hit_count = 0
 		special = "damage_full"
-		moviment_animation(100, 0.2, 0.0, true)
 		moviment = false
+		if (self.global_position.x + 100) >= 1300 or (self.global_position.x - 100) <= 0:
+			return
+		animate_repulsion_movement(100, 0.2, 0.0, true)
 
 	if healt <= 0:
 		death = true
@@ -259,20 +254,15 @@ func set_animation() -> void:
 
 	animation.play(anim_name)
 
-# O NOME DISSO NEM FAZ SENTIDO ARRUMAR UM NOME MELHOR KKK
-# Tenho que estudar melhor esse metodo tween
-func moviment_animation(distance: float, duration: float, y_moviment: float = 0.0, invert: bool = false) -> void:
-	"""
-		Faz que animações de movimento por impacto, ou esquiva seja animadas de forma mais fluida
-	"""
+func animate_repulsion_movement(distance: float, duration: float, y_moviment: float = 0.0, invert: bool = false) -> void:
 	var pos: int = enemy_pos() if !invert else (enemy_pos() * -1)
 	var knockback_vector: Vector2 = Vector2(pos, y_moviment).normalized() * distance
 
-	trash = tween.interpolate_property(
+	ignore = tween.interpolate_property(
 		self, "position", position, position + knockback_vector, duration,
 		tween.TRANS_LINEAR, tween.EASE_IN_OUT
 	)
-	trash = tween.start()
+	ignore = tween.start()
 
 func check_sequence(combo: Array) -> void:
 	for moviments in combo_keys.keys():
@@ -284,7 +274,6 @@ func check_sequence(combo: Array) -> void:
 			healtBar.set_mana(mana)
 			special = moviments
 
-# Não esquecer de remover o dano
 func basic_attack(damage: float = 0.0) -> void:
 	if not player_ref:
 		return
@@ -292,24 +281,27 @@ func basic_attack(damage: float = 0.0) -> void:
 		damage = Global.attack_damage.get(special, 0)
 	player_ref.take_damage(damage)
 	$HitCount.start()
+	var calc_mana = Global.special_cust.get(special, 0)
+	if calc_mana + mana > max_mana:
+		return
 	mana += Global.special_cust.get(special, 0)
 	healtBar.set_mana(mana)
 
 func atack_move() -> void:
 	if special == "runKick":
-		moviment_animation(200, 0.3)
+		animate_repulsion_movement(200, 0.3)
 		return
 	elif special == "special2":
-		moviment_animation(300, 0.3)
+		animate_repulsion_movement(300, 0.3)
 		return
-	moviment_animation(400, 0.6, 0.4)
+	animate_repulsion_movement(400, 0.6, 0.4)
 
 func projectile() -> void:
 	var obj = lazer.instance()
 	get_parent().add_child(obj)
 	
 	direction = 1 if sprite.flip_h == false else -1
-	obj.damage = projectile_damage
+	obj.damage = Global.attack_damage.get("projectile", 50)
 	obj.direction = direction
 	obj.rotate(direction)
 	if special == 'special3':
@@ -324,9 +316,11 @@ func change_collision(colision_state: bool = false) -> void:
 	self.set_collision_layer_bit(3, false if colision_state else true)
 	self.set_collision_mask_bit(1, colision_state)
 
-# *** MELHORAR ESTE METODO ***
 func impact() -> void:
 	if not player_ref:
+		return
+	
+	if player_ref.global_position.x >= 1235 or player_ref.global_position.x == 33:
 		return
 
 	if sprite.flip_h:
@@ -358,6 +352,12 @@ func _on_BlockMaxTime_timeout() -> void:
 	hitbox_status(true)
 	state = MOVE
 
+func on_HitBox_area_exited(area: Area2D) -> void:
+	if area == $HitBox:
+		return
+	player_ref = null
+	state = MOVE
+
 func on_HitBox_area_entered(area:Area2D) -> void:
 	var parent = area.get_parent()
 	if parent.get_groups() == get_groups():
@@ -371,10 +371,6 @@ func on_HitBox_area_entered(area:Area2D) -> void:
 		basic_attack(Global.attack_damage.get(special, 20))
 		impact()
 		on_animation_finished(special)
-
-func on_HitBox_area_exited(_area: Area2D) -> void:
-	player_ref = null
-	state = MOVE
 
 func on_animation_finished(_anim_name: String) -> void:
 	if death:

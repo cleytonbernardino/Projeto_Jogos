@@ -47,6 +47,7 @@ func _on_SeeControls_btn_pressed():
 
 func _on_Restart_btn_pressed():
 	ignore = get_tree().reload_current_scene()
+	Global.wins = [0, 0] # Player 1 | Player 2
 	_on_Continue_btn_pressed()
 
 

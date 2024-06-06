@@ -784,7 +784,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=35]
 resource_name = "roll"
-length = 0.4
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -792,10 +792,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 11, 720, 93, 79 ), Rect2( 116, 721, 79, 93 ), Rect2( 206, 721, 94, 79 ), Rect2( 310, 721, 79, 94 ) ]
+"values": [ Rect2( 11, 720, 93, 79 ), Rect2( 116, 721, 79, 93 ), Rect2( 206, 721, 94, 79 ), Rect2( 310, 721, 79, 94 ), Rect2( 11, 720, 93, 79 ), Rect2( 116, 721, 79, 93 ), Rect2( 206, 721, 94, 79 ), Rect2( 310, 721, 79, 94 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
@@ -1310,7 +1310,7 @@ extents = Vector2( 25, 73.7501 )
 extents = Vector2( 36.333, 49 )
 
 [node name="Baejitul" type="KinematicBody2D"]
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 1.4, 1.4 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 2 )

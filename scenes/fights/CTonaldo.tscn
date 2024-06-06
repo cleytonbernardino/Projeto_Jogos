@@ -441,7 +441,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=36]
 resource_name = "roll"
-length = 0.4
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -449,10 +449,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.00407521, 0.104075, 0.204075, 0.3, 0.4, 0.5, 0.6, 0.695925 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 10, 651, 88, 63 ), Rect2( 109, 651, 63, 88 ), Rect2( 183, 651, 88, 63 ), Rect2( 281, 652, 63, 88 ) ]
+"values": [ Rect2( 10, 651, 88, 63 ), Rect2( 109, 651, 63, 88 ), Rect2( 183, 651, 88, 63 ), Rect2( 281, 652, 63, 88 ), Rect2( 10, 651, 88, 63 ), Rect2( 109, 651, 63, 88 ), Rect2( 183, 651, 88, 63 ), Rect2( 281, 652, 63, 88 ) ]
 }
 
 [sub_resource type="Animation" id=37]

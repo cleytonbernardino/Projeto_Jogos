@@ -27,21 +27,14 @@ func add_win() -> void:
 		win1.color = "#5260f2"
 		win2.color = "#5260f2"
 
-func DEBUG_set_max_heath(heath_value: int) -> void:
-	health.max_value = heath_value
-	health.value = heath_value
-
-func DEBUG_set_max_mana(mana_value: int) -> void:
-	if mana_value <= 0:
-		mana.max_value = 100
-		mana.value = 0
-		return
-
-	mana.max_value = mana_value
-	mana.value = mana_value
-
 func damage(value: int) -> void:
 	health.value -= value
 
+func set_health(value:int) -> void:
+	health.value = value
+
 func set_mana(value: int) -> void:
 	mana.value = value
+	
+func define_max_mana(value: int) -> void:
+	mana.max_value = value

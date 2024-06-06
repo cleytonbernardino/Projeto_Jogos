@@ -400,7 +400,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=31]
 resource_name = "roll"
-length = 0.4
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:region_rect")
 tracks/0/interp = 1
@@ -408,10 +408,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 10, 612, 64, 83 ), Rect2( 84, 606, 83, 64 ), Rect2( 183, 606, 64, 83 ), Rect2( 263, 606, 83, 64 ) ]
+"values": [ Rect2( 10, 612, 64, 83 ), Rect2( 84, 606, 83, 64 ), Rect2( 183, 606, 64, 83 ), Rect2( 263, 606, 83, 64 ), Rect2( 10, 612, 64, 83 ), Rect2( 84, 606, 83, 64 ), Rect2( 183, 606, 64, 83 ), Rect2( 263, 606, 83, 64 ) ]
 }
 
 [sub_resource type="Animation" id=29]
@@ -741,9 +741,10 @@ scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 19 )
-move_speed = 30
+move_speed = 35
+jump_strength = -1.4
 healt = 1400
-projectile_damage = 40
+max_mana = 120
 
 [node name="Texture" type="Sprite" parent="."]
 texture = ExtResource( 1 )

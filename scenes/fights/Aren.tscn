@@ -207,22 +207,6 @@ tracks/0/keys = {
 "values": [ Rect2( 3, 787, 95, 93 ), Rect2( 102, 786, 115, 86 ), Rect2( 222, 787, 68, 108 ), Rect2( 299, 787, 68, 108 ), Rect2( 374, 787, 123, 54 ), Rect2( 502, 787, 83, 92 ) ]
 }
 
-[sub_resource type="Animation" id=32]
-resource_name = "dashing-kick"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 3, 1581, 75, 100 ), Rect2( 82, 1581, 68, 86 ), Rect2( 153, 1581, 71, 84 ) ]
-}
-
 [sub_resource type="Animation" id=33]
 resource_name = "dashing-punch"
 length = 0.4
@@ -463,6 +447,60 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ Rect2( 3, 235, 83, 82 ), Rect2( 92, 235, 88, 84 ), Rect2( 184, 235, 87, 84 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "runKick"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 3, 1581, 75, 100 ), Rect2( 82, 1581, 68, 86 ), Rect2( 153, 1581, 71, 84 ), Rect2( 3, 1581, 75, 100 ), Rect2( 82, 1581, 68, 86 ), Rect2( 153, 1581, 71, 84 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AttackBox/Collision:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 91.1111, 476.67 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AttackBox/Collision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 280, -3.33336 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "atack_move"
+} ]
 }
 
 [sub_resource type="Animation" id=40]
@@ -730,7 +768,6 @@ scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 1 )
-move_speed = 30
 
 [node name="Texture" type="Sprite" parent="."]
 scale = Vector2( 1.2, 1.2 )
@@ -753,7 +790,6 @@ anims/block = SubResource( 47 )
 anims/damage = SubResource( 46 )
 anims/damage_full = SubResource( 48 )
 anims/damage_on_ar = SubResource( 49 )
-anims/dashing-kick = SubResource( 32 )
 anims/dashing-punch = SubResource( 33 )
 anims/idle = SubResource( 36 )
 anims/in_floor = SubResource( 50 )
@@ -762,6 +798,7 @@ anims/jumpPunch = SubResource( 28 )
 anims/punch = SubResource( 31 )
 anims/roll = SubResource( 38 )
 anims/run = SubResource( 39 )
+anims/runKick = SubResource( 32 )
 anims/special1 = SubResource( 40 )
 anims/special2 = SubResource( 51 )
 anims/special2_ = SubResource( 41 )
